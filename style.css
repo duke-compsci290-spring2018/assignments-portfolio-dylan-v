@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    font-family:  Tahoma;
+    font-family:  Roboto;
 
 }
 h1 {
@@ -35,8 +35,10 @@ li {
 
 .header-box{
 	background-color: black;
+	margin:30px; /*/Aestetic reasons/*/
 }
 
 .footer-box{
 	background-color: purple;
+	margin: 30px;
 }
