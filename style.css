@@ -1,11 +1,22 @@
 body {
-    background-color: powderblue;
+    background-color: white;
+    font-family:  Tahoma;
+
 }
 h1 {
     color: blue;
-    font-family: "Arial Narrow", Arial, "Helvetica Condensed", Helvetica, sans-serif;
-    font-size: 50px;
+    font-size: 100px;
+}
+
+h3 {
+	color: black;
+    font-size: 30px;
 }
 p {
     color: red;
+}
+ul {
+	list-style-type: none;
+	font-size: 20px;
+
 }
