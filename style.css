@@ -4,19 +4,39 @@ body {
 
 }
 h1 {
-    color: blue;
+    color: white;
     font-size: 100px;
+    font-style: italic;
+    
 }
-
 h3 {
 	color: black;
     font-size: 30px;
 }
 p {
-    color: red;
+    color: black;
+    font-size: 20px;
 }
-ul {
-	list-style-type: none;
-	font-size: 20px;
 
+li {
+	list-style-type: amharic;
+	font-size: 20px;
+}
+
+
+#highlight{
+	color: orange;
+	text-shadow: 2px 2px 8px LightGrey;
+}
+
+#highlight2{
+	color: purple;
+}
+
+.header-box{
+	background-color: black;
+}
+
+.footer-box{
+	background-color: purple;
 }
