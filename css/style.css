@@ -1,0 +1,60 @@
+body {
+    background-color: white;
+    font-family:  Roboto;
+}
+h1 {
+    color: white;
+    font-size: 100px;
+    font-style: italic;
+    text-align: center;
+}
+h2 {
+	padding-left: 40px;
+
+}
+h3 {
+	color: black;
+    font-size: 30px;
+    padding-left: 40px;
+}
+a:link {
+	color: blue;
+}
+a:visited {
+	color: navy;
+}
+
+li {
+	list-style-type: none;
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+ul {
+	padding-bottom: : 0px;
+}
+
+header{
+	background-color: black;
+	margin:30px; /*/Aestetic reasons/*/
+}
+
+footer{
+	background-color: purple;
+	margin: 30px;
+}
+
+.item {
+	margin-left:  40px;
+}
+
+
+#interest{
+	color: orange;
+	text-shadow: 2px 2px 8px LightGrey;
+}
+
+.highlight{
+	color: purple;
+	font-style: italic;
+	text-shadow: 2px 2px 8px LightGrey;
+}
