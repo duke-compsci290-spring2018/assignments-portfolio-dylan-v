@@ -15,7 +15,7 @@ body {
   padding: 10px;
   margin: 50px;
   border-width: 1px;
-  border-color: #ffffff54;
+  border-color: white;
   border-style: solid;
 }
 
@@ -23,7 +23,6 @@ body {
   float: right;
   width: 445px;
   padding-top: 0px;
-  background-color: 
 }
 
 .preamble {
@@ -86,8 +85,8 @@ header, .summary {
 
 h1 {
   font-size: 100px;
-  text-shadow: 3px 3px #23232354;
-   padding: 0px; margin: -10px;
+  text-shadow: 3px 3px grey;
+  padding: 0px; margin: -10px;
 
 }
 
