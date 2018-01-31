@@ -1,6 +1,9 @@
 body {
     background-color: white;
+    color:white;
     font-family:  Roboto;
+    background: linear-gradient(to right, #4776E6,  #8E54E9);
+
 }
 h1 {
     color: white;
@@ -10,10 +13,11 @@ h1 {
 }
 h2 {
 	padding-left: 40px;
+	color:white;
 
 }
 h3 {
-	color: black;
+	color: white;
     font-size: 30px;
     padding-left: 40px;
 }
@@ -29,11 +33,11 @@ li {
 	padding-bottom: 20px;
 }
 ul {
-	padding-bottom: : 0px;
+	padding-bottom: 0px;
 }
 header{
 	background-color: black;
-	margin:30px; /*/Aestetic reasons/*/
+	margin:30px;
 }
 footer{
 	background-color: purple;
@@ -43,12 +47,15 @@ footer{
 .item {
 	margin-left:  40px;
 }
-.highlight{
-	color: purple;
+.question{
+	color: #585858;
 	font-style: italic;
-	text-shadow: 2px 2px 8px LightGrey;
+}
+.highlight{
+	color: #fdff00;
+	font-style: italic;
 }
 #interest{
-	color: orange;
-	text-shadow: 2px 2px 8px LightGrey;
+	color: #FF9800;
+	font-style: italic;
 }
