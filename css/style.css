@@ -23,7 +23,6 @@ a:link {
 a:visited {
 	color: navy;
 }
-
 li {
 	list-style-type: none;
 	font-size: 20px;
@@ -32,12 +31,10 @@ li {
 ul {
 	padding-bottom: : 0px;
 }
-
 header{
 	background-color: black;
 	margin:30px; /*/Aestetic reasons/*/
 }
-
 footer{
 	background-color: purple;
 	margin: 30px;
@@ -46,15 +43,12 @@ footer{
 .item {
 	margin-left:  40px;
 }
-
-
-#interest{
-	color: orange;
-	text-shadow: 2px 2px 8px LightGrey;
-}
-
 .highlight{
 	color: purple;
 	font-style: italic;
+	text-shadow: 2px 2px 8px LightGrey;
+}
+#interest{
+	color: orange;
 	text-shadow: 2px 2px 8px LightGrey;
 }
