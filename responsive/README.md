@@ -1,2 +1,3 @@
 # assign_responsive
-An example HTML file of data to be styled responsively using Bootstrap
+
+In this assignment I worked with a bootstrap framework in order to create a responsive portfolio. The images occupy 100% of the container that they are placed in and scale according to the dimensions of the screen. When the screen is less than 800px in width, the background turns blue, the font turns white, and the header turns yellow. This is a strong example of the @media feature in CSS which is extreamly useful and important for responsive design.
