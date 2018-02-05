@@ -18,3 +18,33 @@ h2{
 		background-color: yellow;
 	}
 }
+
+@media screen and (max-width: 600px){
+	p{
+		color: white;
+	}
+	h2{
+		color: white;
+	}
+	body{
+		background-color: purple;
+	}
+	.jumbotron{
+		background-color: orange;
+	}
+}
+
+@media screen and (max-width: 500px){
+	p{
+		color: white;
+	}
+	h2{
+		color: white;
+	}
+	body{
+		background-color: red;
+	}
+	.jumbotron{
+		background-color: green;
+	}
+}
