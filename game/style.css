@@ -1,0 +1,6 @@
+body { 
+	font-family: Roboto;
+	background: linear-gradient(to bottom, white,  lightgrey);
+	width: 900px;
+  	padding: 15px;
+}

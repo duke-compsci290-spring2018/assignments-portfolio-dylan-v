@@ -1,14 +1,12 @@
 body {
-    background-color: white;
-    color:white;
+    color: white;
     font-family:  Roboto;
-    background: linear-gradient(to right, #4776E6,  #8E54E9);
+	background: linear-gradient(to right, rgb(93, 172, 218),  rgb(220, 63, 186));
 
 }
 h1 {
     color: white;
     font-size: 100px;
-    font-style: italic;
     text-align: center;
 }
 h2 {
@@ -17,15 +15,15 @@ h2 {
 
 }
 h3 {
-	color: white;
-    font-size: 30px;
+	color: blue;
+    font-size: 50px;
     padding-left: 40px;
 }
 a:link {
-	color: blue;
+	color: pink;
 }
 a:visited {
-	color: navy;
+	color: purple;
 }
 li {
 	list-style-type: none;
@@ -48,14 +46,15 @@ footer{
 	margin-left:  40px;
 }
 .question{
-	color: orange;
-	font-style: italic;
-}
-.highlight{
-	color: #fdff00;
+	color: blue;
 	font-style: italic;
 }
 #interest{
 	color: #FF9800;
 	font-style: italic;
+}
+/*/ Bootstrap style changes /*/
+.jumbotron{
+	background-color: black;
+	color: white;
 }
