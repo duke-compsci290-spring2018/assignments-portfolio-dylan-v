@@ -1,23 +1,29 @@
 body {
-    color: white;
-    font-family:  Roboto;
+    color: black;
+    font-family:  Ubuntu;
 	background: linear-gradient(to right, rgb(93, 172, 218),  rgb(220, 63, 186));
 
 }
 h1 {
     color: white;
-    font-size: 100px;
+    font-size: 70px;
     text-align: center;
 }
 h2 {
 	padding-left: 40px;
-	color:white;
+	color:black;
 
 }
 h3 {
 	color: blue;
     font-size: 50px;
     padding-left: 40px;
+}
+h4 {
+	padding-left: 40px;
+	font-size:30px;
+	color:white;
+
 }
 a:link {
 	color: pink;
