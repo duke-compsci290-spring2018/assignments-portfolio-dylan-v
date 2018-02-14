@@ -4,7 +4,7 @@ body {
   	background: linear-gradient(to right, #4776e6, #8e54e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 h1 {
-    color: white;
+    color: #21252A;
     font-size: 70px;
     text-align: center;
 }
@@ -28,10 +28,11 @@ h5 {
 	color:white;
 }
 a:link {
-	color: 	gold;
+	color: 	blue;
 }
+
 a:visited {
-	color: gold;
+		color:navy;
 }
 li {
 	list-style-type: none;
@@ -54,8 +55,7 @@ footer{
 	margin-left:  40px;
 }
 .question{
-	color: blue;
-	font-style: italic;
+	color: purple;
 }
 #interest{
 	color: #FF9800;
@@ -63,8 +63,9 @@ footer{
 }
 /*/ Bootstrap style changes /*/
 .jumbotron{
-	background-color: black;
+	  	background: gold; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: white;
+	margin-bottom: 0px;
 }
 
 
