@@ -1,8 +1,7 @@
 body {
     color: black;
     font-family:  Ubuntu;
-	background: linear-gradient(to right, rgb(93, 172, 218),  rgb(220, 63, 186));
-
+  	background: linear-gradient(to right, #fc466b, #3f5efb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 h1 {
     color: white;
@@ -10,12 +9,11 @@ h1 {
     text-align: center;
 }
 h2 {
-	padding-left: 40px;
 	color:black;
-
 }
+
 h3 {
-	color: blue;
+	color: white;
     font-size: 50px;
     padding-left: 40px;
 }
@@ -23,13 +21,16 @@ h4 {
 	padding-left: 40px;
 	font-size:30px;
 	color:white;
-
+}
+h5 {
+	font-size:20px;
+	color:white;
 }
 a:link {
-	color: pink;
+	color: blue;
 }
 a:visited {
-	color: purple;
+	color: lightblue;
 }
 li {
 	list-style-type: none;
