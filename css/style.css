@@ -4,7 +4,7 @@ body {
   	background: linear-gradient(to right, #4776e6, #8e54e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 h1 {
-    color: #21252A;
+    color: white;
     font-size: 70px;
     text-align: center;
 }
@@ -28,7 +28,7 @@ h5 {
 	color:white;
 }
 a:link {
-	color: 	blue;
+	color: 	navy;
 }
 
 a:visited {
@@ -63,7 +63,7 @@ footer{
 }
 /*/ Bootstrap style changes /*/
 .jumbotron{
-	  	background: gold; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: blue; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: white;
 	margin-bottom: 0px;
 }
