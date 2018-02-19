@@ -15,15 +15,15 @@
 </head>
 <body>
     <h1> Welcome to the image gallery</h1>
-    <h5>Dynamically load images by checking the boxes and filtering.</h5>
+    <h5>Dynamically load images by checking the boxes and sorting. This removes unchecked categories.</h5>
     <h5>Scroll through relevant images with the blue buttons</h5>
     <h5>Click images to view them specifically. Click again to close the lightbox.</h5>
     <!-- Check boxes and filter -->
     <div class="container-fluid">
       <div class="row">
+        <input class="col" type="button" id="submit" value="Sort" onclick="isReady()">
         <label class="category col-md-6 col-sm-4 col-lg-2">Buildings <input type="checkbox" id="isBuildingChecked"></label>
         <label class="category col-md-6 col-sm-4 col-lg-2">Nature<input type="checkbox" id="isNatureChecked"></label>
-        <input class="col" type="button" id="submit" value="Filter" onclick="isReady()">
       </div>
     </div>
     <!-- Images routed from JSON file are loaded here -->
