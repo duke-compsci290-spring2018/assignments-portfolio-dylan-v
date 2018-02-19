@@ -1,0 +1,32 @@
+{ "images" : [
+    {
+        "src": "images/nature01.jpg",
+        "caption": "Red berries",
+        "category": "nature"
+    },
+    {
+        "src": "images/nature02.jpg",
+        "caption": "Orange berries",
+        "category": "nature"
+
+    },
+    {
+        "src": "images/nature03.jpg",
+        "caption": "Snowy mountains",
+        "category": "nature"
+
+    },
+    {
+        "src": "images/nature04.jpg",
+        "caption": "Fish",
+        "category": "nature"
+
+    },
+    {
+        "src": "images/nature05.jpg",
+        "caption": "Snowy tree",
+        "category": "nature"
+
+    }
+]
+}

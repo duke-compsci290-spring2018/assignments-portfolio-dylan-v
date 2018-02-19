@@ -1,0 +1,32 @@
+{ "images" : [
+    {
+        "src": "images/building01.jpg",
+        "caption": "Apartments",
+        "category" : "building"
+    },
+    {
+        "src": "images/building02.jpg",
+        "caption": "White tower",
+        "category" : "building"
+
+    },
+    {
+        "src": "images/building03.jpg",
+        "caption": "Lantern",
+        "category" : "building"
+
+    },
+    {
+        "src": "images/building04.jpg",
+        "caption": "Montreal",
+        "category" : "building"
+
+    },
+    {
+        "src": "images/building05.jpg",
+        "caption": "Statue",
+        "category" : "building"
+
+    }
+]
+}
