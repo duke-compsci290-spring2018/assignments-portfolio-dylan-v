@@ -35,13 +35,4 @@ label{
     padding: 10px 0;
     font-size:30px;
 }
-/* Animate modal popup */
-.modalContent, #modalCaption {
-    animation-name: lightbox;
-    animation-duration: 0.2s;
-}
 
-@keyframes lightbox {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
