@@ -1,7 +1,9 @@
 //Checks if the document is ready
 $(document).ready(function(){
     console.log("document ready!")
-    isReady();
+    checkButtons();
+    loadImgFiles("buildingPics.json");
+    loadImgFiles("naturePics.json");
     //Check if nature box is checked
     $(document).on("click", "#nature", function(){
       $("#natureCheckbox").prop("checked", true);
@@ -14,29 +16,34 @@ $(document).ready(function(){
     });
 });
 //Load images of specific tag
-function isReady(){
+function checkButtons(){
     // Why can"t these be in the jQuery format? Something about strict equality
     var cityCheckbox = document.getElementById("cityCheckbox");
     var natureCheckbox = document.getElementById("natureCheckbox");
     console.log(cityCheckbox);
     console.log(natureCheckbox);
     //Clear images from unchecked category
-    $("#loadImages").empty();
+    $("#galleryImg").empty();
+    $("#compiledImg").empty();
     if(cityCheckbox.checked === true){
         console.log("loading city images");
-        loadImages("buildingPics.json");
+        loadImgFiles("buildingPics.json");
     }
     if (natureCheckbox.checked === true){
         console.log("loading nature images");
-        loadImages("naturePics.json");
+        loadImgFiles("naturePics.json");
     } 
 }
-//Load into loadImages div images of specific category (specified in isReady())
-function loadImages(file){
+//Load into loadImgFiles div images of specific category (specified in checkButtons())
+function loadImgFiles(file){
         $.getJSON(file, function(data){
           $.each(data.images, function(){
-            //Append each cooresponding image to the loadImages container
-            $("<img>").addClass("slideshow").appendTo($("#loadImages")).attr("src", this.src).attr("id",this.tag).attr("alt",this.caption).click(function(){
+            //Append each cooresponding image to the loadImgFiles container
+            $("<img>").addClass("slideshow").appendTo($("#galleryImg")).attr("src", this.src).attr("id",this.tag).attr("alt",this.caption).click(function(){
+              formatModal($(this));
+              console.log(this.src);
+            });
+            $("<img>").appendTo($("#compiledImg")).attr("src", this.src).attr("id",this.tag).attr("alt",this.caption).click(function(){
               formatModal($(this));
               console.log(this.src);
             });

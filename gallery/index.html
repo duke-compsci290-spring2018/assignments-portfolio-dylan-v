@@ -20,13 +20,14 @@
     <!-- Check boxes and filter -->
     <div class="container-fluid">
       <div class="row">
-        <input class="col-md-2 col-sm-2 col-lg-2" type="button" id="submit" value="Sort" onclick="isReady()">
+        <input class="col-md-2 col-sm-2 col-lg-2" type="button" id="submit" value="Sort" onclick="checkButtons()">
         <label class="category col-md-4 col-sm-4 col-lg-2">Show cities <input type="checkbox" id="cityCheckbox"></label>
         <label class="category col-md-4 col-sm-4 col-lg-2">Show nature<input type="checkbox" id="natureCheckbox"></label>
       </div>
     </div>
     <!-- Images routed from JSON file are loaded here -->
-    <div id="loadImages"></div>
+    <h2>Click arrows to scroll through compiled images</h2>
+    <div id="galleryImg"></div>
     <button class="w3-button w3-blue w3-display-left" onclick="addDivs(-1, 0)">&#10094;</button>
     <button class="w3-button w3-blue w3-display-right" onclick="addDivs(1, 0)">&#10095;</button>
     <!-- Modal image div -->
@@ -34,5 +35,8 @@
       <img src="" class="modalContent" id="modalImage" alt="">
       <div id="modalCaption"></div>
     </div>
+    <br><br><br>
+    <h2>Compiled Images</h2>
+    <div id="compiledImg"></div>
 </body>
 </html>
