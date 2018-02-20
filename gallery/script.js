@@ -1,67 +1,65 @@
-
-
+//Checks if the document is ready
 $(document).ready(function(){
+    console.log("document ready!")
     isReady();
-    //Check both check boxes
+    //Check if nature box is checked
     $(document).on("click", "#nature", function(){
-    $("#isNatureChecked").prop("checked", true);
-    $("#isBuildingChecked").prop("checked", false);
+      $("#natureCheckbox").prop("checked", true);
+      $("#cityCheckbox").prop("checked", false);
     });
-
+    //Check if city box is checked
     $(document).on("click","#buildings",function(){
-        $("#isBuildingChecked").prop("checked", true);
-        $("#isNatureChecked").prop("checked", false);
+      $("#natureCheckbox").prop("checked", false);
+      $("#cityCheckbox").prop("checked", true);
     });
 });
-
+//Load images of specific tag
 function isReady(){
     // Why can"t these be in the jQuery format? Something about strict equality
-    var isBuildingChecked = document.getElementById("isBuildingChecked");
-    var isNatureChecked = document.getElementById("isNatureChecked");
+    var cityCheckbox = document.getElementById("cityCheckbox");
+    var natureCheckbox = document.getElementById("natureCheckbox");
+    console.log(cityCheckbox);
+    console.log(natureCheckbox);
     //Clear images from unchecked category
     $("#loadImages").empty();
-    if(isBuildingChecked.checked === true){
+    if(cityCheckbox.checked === true){
+        console.log("loading city images");
         loadImages("buildingPics.json");
     }
-    if (isNatureChecked.checked === true){
+    if (natureCheckbox.checked === true){
+        console.log("loading nature images");
         loadImages("naturePics.json");
     } 
 }
 //Load into loadImages div images of specific category (specified in isReady())
 function loadImages(file){
         $.getJSON(file, function(data){
-        $.each(data.images, function(){
-          //Append each cooresponding image to the loadImages container
-          $("<img>").addClass("mySlides").appendTo($("#loadImages")).attr("src", this.src).attr("id",this.category).attr("alt",this.caption).click(function(){
-                formatModal($(this));
+          $.each(data.images, function(){
+            //Append each cooresponding image to the loadImages container
+            $("<img>").addClass("slideshow").appendTo($("#loadImages")).attr("src", this.src).attr("id",this.tag).attr("alt",this.caption).click(function(){
+              formatModal($(this));
+              console.log(this.src);
+            });
           });
         });
-        });
 }
-
-//Format modal images
+//Apply attributes and css to modal images (when a picture is clicked and enters lightbox mode)
 function formatModal(image){
+    $("#modalCaption").html(image.attr("alt"));
     $("#modalDiv").css("display","block");
     $("#modalImage").attr("src", image.attr("src")).attr("alt", image.attr("alt"));
-    $("#modalCaption").html(image.attr("alt"));
 }
-//Written using WC3 slideshow tutorial
+//getDivs and addDivs written with help of WC3 slideshow tutorial
 function getDivs(n){
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {
-    slideIndex = 1
-  }    
-  if (n < 1) {
-    slideIndex = slides.length
-  }
+  var slides = document.getElementsByClassName("slideshow");
+  console.log("slide number: " + n);
+  if (n > slides.length){slideIndex = 1}    
+  if (n < 1){slideIndex = slides.length}
   for (var i=0; i<slides.length; i++){
     slides[i].style.display = "none"; 
   }
-  if(slides.length>0){
-    slides[slideIndex-1].style.display = "block";  
-  }
+  if(slides.length>0){slides[slideIndex-1].style.display = "block";}
 }
-
 var slideIndex = 1;
 function addDivs(n){
   getDivs(slideIndex += n);
