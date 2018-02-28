@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Project Manager</title>
+  <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet"></head>
+<body>
+<!-- Generate divs through Vue -->
+   <div id="projectManager">
+        <div>
+            <h1>Project Management Board</h1>
+            <div class="row">
+                <div class="col-sm-3">
+                    <in-board-1 :board1="board1List"></in-board-1>
+                </div>
+                <div class="col-sm-3">
+                    <in-board-2 :board2="board2List"></in-board-2>
+                </div>
+                <div class="col-sm-3">
+                    <in-board-3 :board3="board3List"></in-board-3>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Board 1 container -->
+    <template id="in-board-1">
+        <h3 contenteditable="true"> Board 1</h3>
+        <ul>
+            <li v-for="task in board1">
+                <div class="task">
+                    <b>Task:</b> {{task}}
+                    <button id="moveBtn" v-on:click="toBoard2(task, $index)"class="btn btn-primary">></button>
+                    <button id="removeBtn" v-on:click="deleteTask($index)"class="btn btn-primary">X</button>
+            </li>
+            </div>
+        </ul>
+        <div id="search">
+          <form v-on:submit="addTask">
+            <input type="text" class="form-control" v-model="newTask" placeholder="Enter new task...">
+          </form>
+        </div>
+    </template>
+<!-- Board 2 container -->
+    <template id="in-board-2">
+      <h3 contenteditable="true"> Board 2</h3>
+        <ul>
+            <li v-for="task in board2">
+                <div class="task">
+                    <b>Task:</b> {{task}}
+                    <button id="moveBtn" v-on:click="toBoard3(task, $index)"class="btn btn-primary">></button>
+                    <button id="removeBtn" v-on:click="deleteTask($index)" class="btn btn-primary">X</button>
+                    <button id="moveBtn" v-on:click="toBoard1(task, $index)" class="btn btn-primary"><</button>
+            </li>
+            </div>
+        </ul>
+        <div id="search">
+          <form v-on:submit="addTask">
+            <input type="text" class="form-control" v-model="newTask" placeholder="Enter new task...">
+          </form>
+        </div>
+    </template>
+<!-- Board 3 container -->
+    <template id="in-board-3">
+        <h3 contenteditable="true"> Board 3</h3>
+        <ul>
+            <li v-for="task in board3">
+                <div class="task">
+                <b>Task:</b> {{task}}
+                <button id="removeBtn" v-on:click="deleteTask($index)" class="btn btn-primary">X</button>
+                <button id="moveBtn" v-on:click="toBoard2(task, $index)" class="btn btn-primary"><</button>
+            </li>
+                </div>
+        </ul>
+        <div id="search">
+          <form v-on:submit="addTask">
+            <input type="text" class="form-control" v-model="newTask" placeholder="Enter new task...">
+          </form>
+        </div>
+    </template>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js'></script>
+<script  src="js/index.js"></script>
+</body>
+</html>

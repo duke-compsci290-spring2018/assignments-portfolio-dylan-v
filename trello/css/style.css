@@ -1,0 +1,40 @@
+body{
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#projectManager{
+    padding-top: 5px;
+    padding-left: 40px;
+}
+h1{
+  font-size: 70px;
+  color:white;
+}
+ul{
+  padding:0;
+}
+li{
+  padding:10px;
+  list-style: none;
+  font-size: 15px;
+}
+#board{
+    width: 375px;
+    min-height: 300px;
+    height: auto;
+    padding: 20px;
+    margin:10px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.32);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+#add{
+  float:right;
+}
+#removeBtn{
+  float:right;
+}
+#moveBtn{
+  float:right;
+}
