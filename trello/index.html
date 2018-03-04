@@ -30,13 +30,13 @@
     <template id="in-board-1">
         <h3 contenteditable="true"> Board 1</h3>
         <ul>
-            <li v-for="(task, index) in bone">
+            <li v-for="(index, task) in bone">
                 <div class="task">
                     <button id="moveBtn" v-on:click="toBoard2(task, index)"class="btn-xs">></button>
                     <button id="removeBtn" v-on:click="deleteTask(index)"class="btn-xs">X</button>
                     <h4><b>Task:</b></h4><p> {{task}}</p>
+                  </div>
             </li>
-            </div>
         </ul>
         <div id="search">
           <form v-on:submit="addTask">
@@ -48,7 +48,7 @@
     <template id="in-board-2">
       <h3 contenteditable="true"> Board 2</h3>
         <ul>
-            <li v-for="(task, index) in btwo">
+            <li v-for="(index, task) in btwo">
                 <div class="task">
                     <button id="moveBtn" v-on:click="toBoard3(task, index)"class="btn-xs">></button>
                     <button id="removeBtn" v-on:click="deleteTask(index)" class="btn-xs">X</button>
@@ -67,7 +67,7 @@
     <template id="in-board-3">
         <h3 contenteditable="true"> Board 3</h3>
         <ul>
-            <li v-for="(task, index) in bthree">
+            <li v-for="(index, task) in bthree">
               <div class="task">
                 <button id="removeBtn" v-on:click="deleteTask(index)" class="btn-xs">X</button>
                 <button id="moveBtn" v-on:click="toBoard2(task, index)" class="btn-xs"><</button>
