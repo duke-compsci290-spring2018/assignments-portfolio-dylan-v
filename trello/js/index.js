@@ -3,15 +3,19 @@ var B1 = [];
 var B2 = [];
 var B3 = [];
 
+//Need to figure out how to make new Vue components with a button...
+//Component for board 1 (far left)
 Vue.component("in-board-1", {
     projectName: "Board 1",
     props: ["bone"],
     template: "#in-board-1",
+    //Data structure still very simple, just a task name
     data: function(){
       return {
         newTask: ""
       }
     },
+    //Add new task to task ul
     methods:{
         addTask: function(e){
             var task = this.newTask;
@@ -23,9 +27,11 @@ Vue.component("in-board-1", {
             this.newTask = ""
             e.preventDefault();
         },
+        //Remove task from task ul by splicing it from the data array
         deleteTask: function(index){
             B1.splice(index, 1);
         },
+        //Removes and adds task from one array to another. Not sure how to generalize this because HTML cannot directly access B1,B2, B3
         toBoard2: function(task, index){
            B2.push(task)
            B1.splice(index,1);
@@ -33,6 +39,7 @@ Vue.component("in-board-1", {
     }
 });
 
+//Same as above, but different move functions specific to board-2's location
 Vue.component("in-board-2", {
     projectName: "Board 2",
     props: ["btwo"],
@@ -66,7 +73,7 @@ Vue.component("in-board-2", {
         }
     }
 });
-
+//Same as above, but different move functions specific to board-3's location
 Vue.component("in-board-3", {
     projectName: "Board 3",
     props: ["bthree"],
@@ -97,6 +104,7 @@ Vue.component("in-board-3", {
     }
 });
 
+//Instantiate new Vue instance. Data object holds large arrays that contain task information
 new Vue({
     el: "#projectManager",
     data: {

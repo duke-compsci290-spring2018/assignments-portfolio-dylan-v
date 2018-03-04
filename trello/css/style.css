@@ -2,7 +2,7 @@ body{
   background: linear-gradient(to right, #ff4e50, #f9d423);
   font-family: 'Source Sans Pro', sans-serif;
   }
-
+/*/Formatting full application div /*/
 #projectManager{
     padding-top: 5px;
     padding-left: 40px;
@@ -26,17 +26,17 @@ li{
   list-style: none;
   font-size: 15px;
 }
+/*/Formatting for each task div within task ul /*/
 .task{
     box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.32);
     background-color: white;
     height: 70px;
     padding: 3px;
     border-radius: 5px;
-    box-shadow:
-        inset 0px 11px 8px -10px #CCC,
-        inset 0px -11px 8px -10px #CCC; 
+    box-shadow: inset 0px 11px 8px -10px #CCC, inset 0px -11px 8px -10px #CCC;
 
 }
+/*/Changing default bootstrap button format. removeBtn is customized to be red/*/
 #removeBtn{
   float: right;
   color: white;
@@ -47,6 +47,7 @@ li{
   border-radius: 0px;
 
 }
+/*/Changing default bootstrap button format. moveBtn is customized to be blue/*/
 #moveBtn{
   float: right;
   color: white;
@@ -56,6 +57,7 @@ li{
   border-color: rgb(66, 184, 221);
   border-radius: 0px;
 }
+/*/Remove radius from all buttons in general/*/
 button{
   border-radius: 0px;
 }

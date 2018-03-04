@@ -1,6 +1,7 @@
 (Basic Version)
 
 Dylan Vanelli - dgv3
+I went to office hours a few times to understand how to use Vue. I still feel that I can not fully utilizing it, but I have started to grasp it.
 So far, I've spent about 8 hours building this app. The hardest part was figuring out how to use Vue. However, now I see the power of the framework. I still need to implement a lot of features.
 
 Current features:
