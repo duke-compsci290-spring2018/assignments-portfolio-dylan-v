@@ -5,7 +5,7 @@ var B3 = [];
 
 Vue.component("in-board-1", {
     projectName: "Board 1",
-    props: ["board1"],
+    props: ["bone"],
     template: "#in-board-1",
     data: function(){
       return {
@@ -14,7 +14,7 @@ Vue.component("in-board-1", {
     },
     methods:{
         addTask: function(e){
-            var task = this.newTask.trim();
+            var task = this.newTask;
             if(!B1.includes(task)){
                 B1.push(task);
             } else{
@@ -35,7 +35,7 @@ Vue.component("in-board-1", {
 
 Vue.component("in-board-2", {
     projectName: "Board 2",
-    props: ["board2"],
+    props: ["btwo"],
     template: "#in-board-2",
     data: function(){
       return {
@@ -44,7 +44,7 @@ Vue.component("in-board-2", {
     },
     methods:{
         addTask: function(e){
-            var task = this.newTask.trim();
+            var task = this.newTask;
             if(!B2.includes(task)){
                 B2.push(task);
             } else{
@@ -69,7 +69,7 @@ Vue.component("in-board-2", {
 
 Vue.component("in-board-3", {
     projectName: "Board 3",
-    props: ["board3"],
+    props: ["bthree"],
     template: "#in-board-3",
     data: function(){
       return {
@@ -78,7 +78,7 @@ Vue.component("in-board-3", {
     },
     methods:{
         addTask: function(e){
-            var task = this.newTask.trim();
+            var task = this.newTask;
             if(!B3.includes(task)){
                 B3.push(task);
             } else{
