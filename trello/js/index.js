@@ -12,19 +12,27 @@ Vue.component("in-board-1", {
     //Data structure still very simple, just a task name
     data: function(){
       return {
-        newTask: ""
+        newTask: "",
+        newDesc: "",
+        newTitle: "",
       }
     },
     //Add new task to task ul
     methods:{
+        addName: function(e){
+          this.newTask=this.newTask;
+          e.preventDefault();
+        },
         addTask: function(e){
-            var task = this.newTask;
+            var task = {title: this.newTask, desc: this.newDesc};
+            console.log(task.title);
             if(!B1.includes(task)){
                 B1.push(task);
             } else{
                 B1.push(task + " ");
             }
-            this.newTask = ""
+            this.newTask = "";
+            this.newDesc = "";
             e.preventDefault();
         },
         //Remove task from task ul by splicing it from the data array
@@ -46,18 +54,26 @@ Vue.component("in-board-2", {
     template: "#in-board-2",
     data: function(){
       return {
-        newTask: ""
+        newTask: "",
+        newDesc: "",
+        newTitle: "",
       }
     },
     methods:{
+        addName: function(e){
+          this.newTask=this.newTask;
+          e.preventDefault();
+        },
         addTask: function(e){
-            var task = this.newTask;
+            var task = {title: this.newTask, desc: this.newDesc};
+            console.log(task.title);
             if(!B2.includes(task)){
                 B2.push(task);
             } else{
                 B2.push(task + " ");
             }
-            this.newTask = ""
+            this.newTask = "";
+            this.newDesc = "";
             e.preventDefault();
         },
         deleteTask: function(index){
@@ -80,18 +96,26 @@ Vue.component("in-board-3", {
     template: "#in-board-3",
     data: function(){
       return {
-        newTask: ""
+        newTask: "",
+        newDesc: "",
+        newTitle: "",
       }
     },
     methods:{
+      addName: function(e){
+        this.newTask=this.newTask;
+        e.preventDefault();
+      },
         addTask: function(e){
-            var task = this.newTask;
+            var task = {title: this.newTask, desc: this.newDesc};
+            console.log(task.title);
             if(!B3.includes(task)){
                 B3.push(task);
             } else{
                 B3.push(task + " ");
             }
-            this.newTask = ""
+            this.newTask = "";
+            this.newDesc = "";
             e.preventDefault();
         },
         deleteTask: function(index){
