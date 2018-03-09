@@ -97,4 +97,4 @@ var app = new Vue({
         },
     },
 })
-app.$mount('#trillo');
+app.$mount("#trillo");
