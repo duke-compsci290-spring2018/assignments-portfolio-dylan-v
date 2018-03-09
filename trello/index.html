@@ -1,102 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Project Manager</title>
-  <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <body>
-<!-- Generate divs through Vue -->
-   <div id="projectManager">
-        <div>
-            <h1>Project Management Board</h1>
-            <div class="row">
-                <div class="col-sm-3">
-                    <in-board-1 :bone="board1List"></in-board-1>
-                </div>
-                <div class="col-sm-3">
-                    <in-board-2 :btwo="board2List"></in-board-2>
-                </div>
-                <div class="col-sm-3">
-                    <in-board-3 :bthree="board3List"></in-board-3>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Dylan Vanelli" />
+        <title>Trillo</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
+        <script src="js/main.js" async></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    </head>
+    <body>
+        <div id="trillo">
+            <h1>Trillo: The Discount Trello</h1>
+            <div>
+                <input v-on:keyup.enter="addBoard" placeholder="Add a new list..." v-model="newBoard">
+                <button class="btn-sm" id="changeColorBtn" v-on:click="changeBackground($event)">Background Color</button>
+            </div>
+            <button class="btn" v-on:click="document.getElementById('row').style.display='table';">Vertical</button>
+            <button class="btn" v-on:click="document.getElementById('row').style.display='flex';">Horizontal</button>
+            <div id="row" class="row">
+                <div class="board" v-for="board in boards">
+                    <div class="view">
+                        <button class="btn-sm" v-on:click="shiftRight(board)">></button>
+                        <button class="btn-sm" v-on:click="deleteBoard(board)">x</button>
+                        <button class="btn-sm" v-on:click="shiftLeft(board)"><</button>
+                        <button class="btn-sm" v-on:click="showBoard(board)">Hide</button>
+                        <h3>{{ board.title }}</h3>
+                        <input id="title" type="text" class="form-control" v-model="board.title" placeholder="Edit title...">
+                    </div>
+                    <div v-if="board.visible">
+                        <div>
+                            <input @keyup.enter="addCard(board)" placeholder="Add a new card..." v-model="board.newCard">
+                        </div>
+                        <div>
+                            <ul>
+                                <li v-for="item in board.items">
+                                    <div id="card" class="view">
+                                        {{ item.title }}
+                                        <button class="btn-sm" v-on:click="deleteCard(board, item)">x</button>
+                                        <button class="btn-sm" v-on:click="showCard(item)">Expand</button>
+                                        <div v-if="item.visible">
+                                            <p id="created">Created: {{item.created}}</p>
+                                            <p class="desc">{{item.description}}</p>
+                                            <input type="text" class="form-control" v-model="item.description" placeholder="Edit description...">
+                                            <input @keyup.enter="addComment(item)" placeholder="Add a new comment..." v-model="item.newComment">
+                                            <ul>
+                                              <li v-for="(comment, index) in item.comments">
+                                                <p id="comment"> Comment {{index+1}}: {{comment.title}}<p>
+                                              </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- Board 1 container -->
-    <template id="in-board-1">
-        <h3 contenteditable="true"> Board 1</h3>
-        <ul>
-            <li v-for="(index, task) in bone">
-                <div id="task">
-                    <button id="moveBtn" v-on:click="toBoard2(task, index)"class="btn-xs">></button>
-                    <button id="removeBtn" v-on:click="deleteTask(index)"class="btn-xs">x</button>
-                    <br>
-                    <h4><b>Task:</b></h4><p> {{task.title}}</p>
-                    <div id=desc><h4><b>Description:</b></h4><p> {{task.desc}}</p></div>
-                  </div>
-            </li>
-        </ul>
-        <div id="search">
-          <form v-on:submit="addName">
-            <input type="text" class="form-control" v-model="newTask" placeholder="Enter new task...">
-          </form>
-          <form v-on:submit="addTask">
-            <input type="text" class="form-control" v-model="newDesc" placeholder="Enter a description...">
-          </form>
-        </div>
-    </template>
-<!-- Board 2 container -->
-    <template id="in-board-2">
-      <h3 contenteditable="true"> Board 2</h3>
-        <ul>
-            <li v-for="(index, task) in btwo">
-                <div id="task">
-                    <button id="moveBtn" v-on:click="toBoard3(task, index)"class="btn-xs">></button>
-                    <button id="removeBtn" v-on:click="deleteTask(index)" class="btn-xs">x</button>
-                    <button id="moveBtn" v-on:click="toBoard1(task, index)" class="btn-xs"><</button>
-                    <br>
-                    <h4><b>Task:</b></h4><p> {{task.title}}</p>
-                    <div id=desc><h4><b>Description:</b></h4><p> {{task.desc}}</p></div>
-                </div>
-            </li>
-        </ul>
-        <div id="search">
-          <form v-on:submit="addName">
-            <input type="text" class="form-control" v-model="newTask" placeholder="Enter new task...">
-          </form>
-          <form v-on:submit="addTask">
-            <input type="text" class="form-control" v-model="newDesc" placeholder="Enter a description...">
-          </form>
-        </div>
-    </template>
-<!-- Board 3 container -->
-    <template id="in-board-3">
-        <h3 contenteditable="true"> Board 3</h3>
-        <ul>
-            <li v-for="(index, task) in bthree">
-              <div id="task">
-                <button id="removeBtn" v-on:click="deleteTask(index)" class="btn-xs">x</button>
-                <button id="moveBtn" v-on:click="toBoard2(task, index)" class="btn-xs"><</button>
-                <br>
-                <h4><b>Task:</b></h4><p> {{task.title}}</p>
-                <div id=desc><h4><b>Description:</b></h4><p> {{task.desc}}</p></div>
-              </div>
-            </li>
-        </ul>
-        <div id="search">
-          <form v-on:submit="addName">
-            <input type="text" class="form-control" v-model="newTask" placeholder="Enter new task...">
-          </form>
-          <form v-on:submit="addTask">
-            <input type="text" class="form-control" v-model="newDesc" placeholder="Enter a description...">
-          </form>
-        </div>
-    </template>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js'></script>
-<script  src="js/index.js"></script>
-</body>
+    </body>
 </html>
