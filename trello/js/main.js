@@ -45,7 +45,7 @@ var app = new Vue({
         shiftRight: function(board) {
             var index = this.boards.indexOf(board);
             if (index != this.boards.length -1) {
-                this.boards.splice(index+2, 0, card);
+                this.boards.splice(index+2, 0, board);
                 this.boards.splice(index, 1);
             }
         },
