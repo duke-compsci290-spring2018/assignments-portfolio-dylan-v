@@ -23,14 +23,15 @@
             <button class="btn" v-on:click="document.getElementById('row').style.display='table';">Vertical</button>
             <button class="btn" v-on:click="document.getElementById('row').style.display='flex';">Horizontal</button>
             <div id="row" class="row">
-                <div class="board" v-for="board in boards">
+                <div class="board" v-for="(board, index) in boards" v-bind:id="board.title">
                     <div class="view">
+                        <!--<input @keyup.enter="changeColor(board)" placeholder="Change board color..." v-model="board.newColor">-->
                         <button class="btn-sm" v-on:click="shiftRight(board)">></button>
                         <button class="btn-sm" v-on:click="deleteBoard(board)">x</button>
                         <button class="btn-sm" v-on:click="shiftLeft(board)"><</button>
                         <button class="btn-sm" v-on:click="showBoard(board)">Hide</button>
                         <h3>{{ board.title }}</h3>
-                        <input id="title" type="text" class="form-control" v-model="board.title" placeholder="Edit title...">
+                        <input @keyup.enter="editTitle(board)" placeholder="Change the title..." v-model="board.newTitle">
                     </div>
                     <div v-if="board.visible">
                         <div>
@@ -45,12 +46,18 @@
                                         <button class="btn-sm" v-on:click="showCard(item)">Expand</button>
                                         <div v-if="item.visible">
                                             <p id="created">Created: {{item.created}}</p>
-                                            <p class="desc">{{item.description}}</p>
-                                            <input type="text" class="form-control" v-model="item.description" placeholder="Edit description...">
+                                            <p class="desc">About: {{item.about}}</p>
+                                            <input @keyup.enter="editAbout(item)" placeholder="Edit description..." v-model="item.newAbout">
+                                            <input @keyup.enter="addToDo(item)" placeholder="Add a new todo..." v-model="item.newToDo">
+                                            <ul>
+                                              <li v-for="(todo, index) in item.todos">
+                                                •{{todo.title}}<button class="btn-sm" v-on:click="deleteToDo(item, todo)">x</button>
+                                              </li>
+                                            </ul>
                                             <input @keyup.enter="addComment(item)" placeholder="Add a new comment..." v-model="item.newComment">
                                             <ul>
                                               <li v-for="(comment, index) in item.comments">
-                                                <p id="comment"> Comment {{index+1}}: {{comment.title}}<p>
+                                                Comment {{index+1}}: {{comment.title}}<button class="btn-sm" v-on:click="deleteComment(item, comment)">x</button>
                                               </li>
                                             </ul>
                                         </div>

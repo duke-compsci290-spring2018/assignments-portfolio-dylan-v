@@ -3,10 +3,9 @@
 var app = new Vue({
     //Add in some example data
     data: {
-        boards: [{title: "Groceries", newCard:"", items:[{title: "Get milk.", visible: false, created:"3/9/18", newComment:"", comments:[]},{title: "Pick up bread.", visible: false, created:"3/9/18", newComment:"", comments:[]}], visible:true},
-                 {title: "To-Dos", newCard:"",items:[{title: "Walk the dog.", visible: false, created:"3/9/18", newComment:"", comments:[]},{title: "Fill up the tank.", visible: false, created:"3/9/18", newComment:"", comments:[]}], visible:true},
-                 {title: "Misc.", newCard:"",items:[{title: "Check out the new TV show.", visible: false, created:"3/9/18", newComment:"", comments:[]},{title: "Download a new app.", visible: false, created:"3/9/18", newComment:"", comments:[]}], visible:true}],
-        items: [],
+        boards: [{title: "Groceries", newCard:"", items:[{title: "Get milk.", visible: false, created:"3/9/18", newComment:"", comments:[], newToDo:"", todos:[], about:""},{title: "Pick up bread.", visible: false, created:"3/9/18", newComment:"", comments:[],newToDo:"", todos:[], about:""}], visible:true, color: "#f7f7f7", newColor:""},
+                 {title: "To-Dos", newCard:"",items:[{title: "Walk the dog.", visible: false, created:"3/9/18", newComment:"", comments:[], newToDo:"", todos:[],about:""},{title: "Fill up the tank.", visible: false, created:"3/9/18", newComment:"", comments:[],newToDo:"", todos:[], about:""}], visible:true, color: "#f7f7f7",newColor:""},
+                 {title: "Misc.", newCard:"",items:[{title: "Check out the new TV show.", visible: false, created:"3/9/18", newComment:"", comments:[], newToDo:"", todos:[],about:""},{title: "Download a new app.", visible: false, created:"3/9/18", newComment:"", comments:[],newToDo:"", todos:[]}], visible:true, color: "#f7f7f7",newColor:""}],
         newBoard: "",
     },
     methods: {
@@ -17,13 +16,19 @@ var app = new Vue({
                 this.boards.push({
                     title: this.newBoard,
                     newCard: "",
-                    newComment: "",
+                    // newComment: "",
+                    // comments:[],
                     items: [],
-                    comments:[],
                     visible: true,
+                    color: "#f7f7f7",
+                    newColor: "",
                   });
             }
             this.newBoard="";
+        },
+        editTitle: function(board){
+          board.title = board.newTitle.trim();
+          board.newTitle="";
         },
         //Finds index of current board and splices it from the boards array
         deleteBoard: function(board) {
@@ -64,9 +69,25 @@ var app = new Vue({
                     created: newdate,
                     newComment:"",
                     comments:[],
+                    newToDo:"",
+                    todos:[],
+                    about:"",
                 });
             }
             board.newCard="";
+        },
+        addToDo: function(card){
+          var todo = card.newToDo.trim();
+          console.log(todo);
+          if (todo) {
+              card.todos.push({
+                  title: todo,
+              });
+          }
+          card.newToDo="";
+        },
+        deleteToDo: function(card, todo) {
+            card.todos.splice(card.todos.indexOf(todo), 1);
         },
         //Add any number of comments to the specific card within a board; pushes to comments array within the specifc card
         addComment: function(card){
@@ -78,7 +99,13 @@ var app = new Vue({
               });
           }
           card.newComment="";
-
+        },
+        deleteComment: function(card, comment) {
+            card.comments.splice(card.comments.indexOf(comment), 1);
+        },
+        editAbout: function(card){
+          card.about = card.newAbout.trim();
+          card.newAbout="";
         },
         //Splice card from the card array within a specific board
         deleteCard: function(board, item) {
@@ -94,6 +121,11 @@ var app = new Vue({
           var colorArr = colorArray[Math.floor(Math.random()*colorArray.length)];
           document.getElementsByTagName("body")[0].style.background=colorArr;
           e.preventDefault();
+        },
+        changeColor: function(board){
+          console.log(board.newColor)
+          board.color=board.newColor;
+          newColor="";
         },
     },
 })

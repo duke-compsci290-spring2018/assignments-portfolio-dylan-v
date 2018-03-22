@@ -1,7 +1,7 @@
 /*/Dylan Vanelli/*/
 /*/Initial gradient is changed when Background Color button is clicked/*/
 body{
-  background: linear-gradient(to right, #f85032, #e73827);
+  background: lightblue;
   padding-left: 20px;
 }
 /*/Custon input styling, adding some roundness/*/
