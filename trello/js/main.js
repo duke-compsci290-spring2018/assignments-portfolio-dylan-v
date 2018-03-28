@@ -1,4 +1,22 @@
 //Dylan Vanelli
+
+
+
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAU9CQ-T3eXYIZVsE-vjO9-2vmfmj2JphY",
+    authDomain: "trello-a368c.firebaseapp.com",
+    databaseURL: "https://trello-a368c.firebaseio.com",
+    projectId: "trello-a368c",
+    storageBucket: "trello-a368c.appspot.com",
+    messagingSenderId: "797031830957"
+  };
+  var db = firebase.initializeApp(config).database();
+  var usersRef = db.ref('users');
+  Vue.use(VueFire);
+
+
+
 //Instantiate the Vue instance
 var app = new Vue({
     //Add in some example data
@@ -8,6 +26,11 @@ var app = new Vue({
                  {title: "Misc.", newCard:"",items:[{title: "Check out the new TV show.", visible: false, created:"3/9/18", newComment:"", comments:[], newToDo:"", todos:[],about:""},{title: "Download a new app.", visible: false, created:"3/9/18", newComment:"", comments:[],newToDo:"", todos:[]}], visible:true, color: "#f7f7f7",newColor:""}],
         newBoard: "",
     },
+    firebase: {
+      users: usersRef
+
+
+    },
     methods: {
         //Add a board; pushes to boards array within Vue instance
         addBoard: function() {
@@ -16,8 +39,6 @@ var app = new Vue({
                 this.boards.push({
                     title: this.newBoard,
                     newCard: "",
-                    // newComment: "",
-                    // comments:[],
                     items: [],
                     visible: true,
                     color: "#f7f7f7",
@@ -60,13 +81,13 @@ var app = new Vue({
             var month = dateObj.getUTCMonth() + 1;
             var day = dateObj.getUTCDate();
             var year = dateObj.getUTCFullYear();
-            newdate = month+"/"+day+"/"+year;
+            newDate = month+"/"+day+"/"+year;
             var item = board.newCard.trim();
             if (item) {
                 board.items.push({
                     title: item,
                     visible: false,
-                    created: newdate,
+                    created: newDate,
                     newComment:"",
                     comments:[],
                     newToDo:"",
@@ -127,6 +148,7 @@ var app = new Vue({
           board.color=board.newColor;
           newColor="";
         },
+        addUser: function()
     },
 })
 app.$mount("#trillo");
