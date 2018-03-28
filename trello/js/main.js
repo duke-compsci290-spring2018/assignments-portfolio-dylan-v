@@ -148,7 +148,6 @@ var app = new Vue({
           board.color=board.newColor;
           newColor="";
         },
-        addUser: function()
     },
 })
 app.$mount("#trillo");
