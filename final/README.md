@@ -1,6 +1,6 @@
 Final Project -- News Platform Political Skew Meter
 
-New IDs: dgv3 and sms107
+NetIDs: dgv3 and sms107
 
 Outline:
 
