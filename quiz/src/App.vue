@@ -1,38 +1,25 @@
 <template>
   <div id="app" v-bind:style="{background: backgroundColor}">
-
     <div id="quiz">
-      <div id="top-quiz">
+      <div id="top">
         <h1 v-show="mode=='takeQuiz'"> Current quiz: {{quizArr[quizIndex].quizName}} </h1>
         <h1 id="question" v-show="mode=='takeQuiz'">{{ quizArr[quizIndex].questionArr[questionIndex].question }}</h1>
         <h1 v-show="mode=='init'">Choose a quiz below:</h1>
-        <h2 v-show="mode=='endQuiz'">{{ total + "/" + quizArr[quizIndex].questionArr.length }} answered correctly</h2>
-        <h1 v-show="mode=='endQuiz'">You got {{ Math.floor(total/quizArr[quizIndex].questionArr.length * 100) }}% correct</h1>
+        <h1 v-show="mode=='endQuiz'">Quiz complete! You got {{ Math.floor(total/quizArr[quizIndex].questionArr.length * 100) }}% ({{ total + "/" + quizArr[quizIndex].questionArr.length }}) correct.</h1>
       </div>
-
-      <a class="button" v-show="mode=='init'"
-         v-for="quiz in quizArr"
-         :key="JSON.stringify(quiz)"
-         @click="init(quizArr.indexOf(quiz))">
+      <a class="button" v-show="mode=='init'"v-for="quiz in quizArr":key="JSON.stringify(quiz)"@click="init(quizArr.indexOf(quiz))">
          {{ quiz.quizName }}
       </a>
-
-      <a class="button" v-show="mode=='takeQuiz'"
-         v-for="(option, optionIndex) in quizArr[quizIndex].questionArr[questionIndex].options"
-         :key="JSON.stringify(option)"
-         @click="submit(optionIndex)">
+      <a class="button" v-show="mode=='takeQuiz'" v-for="(option, optionIndex) in quizArr[quizIndex].questionArr[questionIndex].options" :key="JSON.stringify(option)" @click="submit(optionIndex)">
          {{ option }}
       </a>
-
       <a class="button" v-show="mode=='endQuiz'" @click="restart"> Take another quiz!</a>
-
-      <div v-show="mode=='takeQuiz'" id="bottom-quiz">
+      <div v-show="mode=='takeQuiz' || mode=='endQuiz'" id="bottom">
         <div>
           <p v-show="mode=='takeQuiz'">Question {{ questionIndex + 1 + " / " + quizArr[quizIndex].questionArr.length }}</p>
-
-          <div @click="resubmit()" class="wrong" :class="{disabled: wrongIndexArr.length == 0}">
-          <p>You got the last question wrong! Try again.</p>
-          </div>
+          <button v-show="mode=='takeQuiz'" @click="resubmit()" class="wrongAnswer" :class="{greyedOut: wrongIndexArr.length == 0}">
+          <p>You got a question wrong! Try again.</p>
+          </button>
         </div>
       </div>
     </div>
@@ -54,60 +41,69 @@ export default {
       nextQuestionIndex: 1,
       wrongIndexArr: [],
       total: 0,
+      quizColor: "",
     }
   },
   methods: {
-    init: function(index) {
-      this.quizIndex = index;
-      this.mode = "takeQuiz";
-      //Set background color
+    init(index) { //Based on what the user selects, set up approperiate quiz
+      this.quizIndex = index; //Specify quiz for use later
+      //Modify background based on index
       if (index == 0){
-        this.backgroundColor = "linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d)";
+        this.backgroundColor = "linear-gradient(to right, #5f2c82, #49a09d)";
       }
       if (index == 1){
-        this.backgroundColor = "linear-gradient(to right, #396afc, #2948ff)";
+        this.backgroundColor = "linear-gradient(to right, #fe8c00, #f83600)";
       }
       if (index == 2){
         this.backgroundColor = "linear-gradient(to right, #ff9966, #ff5e62)";
       }
+      if (index == 3){
+        this.backgroundColor = "linear-gradient(to right, #0575e6, #021b79)";
+      }
+      this.mode = "takeQuiz";
     },
-    submit: function(index) { //Determine whether answers is right or wrong
-      if (this.quizArr[this.quizIndex].questionArr[this.questionIndex].correctOption == index) {
+    submit(index) { //Compare right answer index specified in JSON to index that user selected
+      if (this.quizArr[this.quizIndex].questionArr[this.questionIndex].correctIndex == index) {
         this.total++;
       } else {
         console.log("Wrong answer at index: " + index);
+        console.log("Wrong answer added to wrongIndexArr");
         this.wrongIndexArr.push(index);
       }
-
-      if (this.questionIndex < this.quizArr[this.quizIndex].questionArr.length-1) {
-        if (this.wrongIndexArr.length > 0 && this.wrongIndexArr[0] > this.questionIndex) {
+      if (this.questionIndex < this.quizArr[this.quizIndex].questionArr.length-1) { //Keep track of question index
+        if (this.questionIndex < this.wrongIndexArr[0]) {
           var goBackTo = this.wrongIndexArr[0];
           this.wrongIndexArr.shift()
           this.questionIndex = goBackTo;
+          console.log("Current index " + this.questionIndex);
+          console.log("Going back to index " + goBackTo);
         } else {
           this.questionIndex = this.nextQuestionIndex;
           this.nextQuestionIndex++;
         }
-      } else {
+      } else { //End of the quiz, clears information and allow user to reset
         this.mode = "endQuiz";
+        var emptyArry = this.wrongIndexArr;
+        this.wrongIndexArr=[];
         this.questionIndex = 0;
         this.nextQuestionIndex = 1;
+        console.log("Reset inital values");
       }
     },
-    resubmit: function() {
+    resubmit() { //Go back to index of wrong answer, then return to current
       if (this.wrongIndexArr.length > 0) {
         this.nextQuestionIndex = this.questionIndex; //Remember index of current question
-        this.questionIndex = this.wrongIndexArr.shift(); //Go back to wrong question, then return to current question
+        this.questionIndex = this.wrongIndexArr.shift(); //Go back to wrong question, clear it from arr, then return to current question
+        console.log("Current index at " + this.nextQuestionIndex);
+        console.log("Going back to index " + this.questionIndex);
       }
     },
-    restart: function() {
+    restart() { //Reset app variables to initial values
       this.mode = "init";
-      var emptyArry = this.wrongIndexArr;
-      this.wrongIndexArr=[];
-      this.questionIndex = 0;
-      this.nextQuestionIndex = 1;
       this.total = 0;
-      this.backgroundColor = "linear-gradient(to right, #4568dc, #b06ab3)";
+      this.backgroundColor = "linear-gradient(to right, #4568dc, #b06ab3)"; //Reset background color
+      console.log("Score and background reset");
+      console.log("System initialized");
     }
   }
 }

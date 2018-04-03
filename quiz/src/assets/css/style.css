@@ -1,12 +1,6 @@
 body{
   margin:0;padding:0
 }
-h3{
-  font-size: 30px;
-  text-align:center;
-  color:white;
-  font-weight: normal;
-}
 h1{
   margin-top:15px;
   margin-bottom:-19px;
@@ -18,61 +12,86 @@ h2{
   text-align:left;
   font-weight: bold;
 }
+h3{
+  text-align:center;
+  font-size: 30px;
+  color:white;
+  font-weight: normal;
+}
+button{
+  border-radius: 10px;
+  transition-duration:.1s;
+  cursor:pointer;
+  float:center;
+  text-align:center;
+  background-color: white;
+  border-color:white;
+}
+button:hover{
+  cursor:pointer;
+}
+/*Remove blue lines default in Chrome when interacting with a button */
+button:focus{
+  outline:0;
+}
 #question{
   font-weight: bold;
   margin-top: 30px;
 }
 #app{
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to right, #4568dc, #b06ab3);
-  -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing:antialiased;
+  background: linear-gradient(to right, #4568dc, #b06ab3);
   text-align:center;
-  width: 100%;
-  height: 100%;
   position:absolute;
+  width: 100%;
+  height:120%;
 }
 #quiz{
-  width:700px;
+  width:1000px;
   margin:150px auto;
   background-color: #f7f7f7;
-  border-radius: 15px;
   margin-top: 150px;
+  border-radius: 15px;
+  padding-bottom:5px;
 }
-#top-quiz{
+#top{
   padding:20px;
   text-align:center
 }
-
+#bottom{
+  position:relative;
+  padding:10px 5px;
+}
+/*Div formatted like buttons. Easier to customize. */
 .button{
   display:block;
-  text-align:center;
-  background-color: white;
-  border-radius: 10px;
   padding:20px;
-  margin: 20px;
+  margin: 30px;
+  border-radius: 10px;
   transition-duration:.1s;
   cursor:pointer;
   position:relative;
+  text-align:center;
+  background-color: white;
 }
 .button:hover{
   box-shadow:0 3px 6px rgba(0,0,0,.1);
   transform: scale(1.05);
 }
-#bottom-quiz{
-  position:relative;
-  padding:10px 20px;
-}
-.wrong{
+/*When wrongIndexArr > 0, styling of "go back" button changes to reflect new interaction ability*/
+.wrongAnswer{
   color:blue;
+  font-size:13px;
   cursor: pointer;
   transition-duration:.1s;
 }
-.wrong:hover{
+.wrongAnswer:hover{
   color:darkblue;
-  transform: scale(1.0);
+  transform: scale(1.2);
 }
-.disabled,.disabled:hover{
+.greyedOut,.greyedOut:hover{
   cursor:auto;
   color:darkgrey;
   transform: scale(1.0);

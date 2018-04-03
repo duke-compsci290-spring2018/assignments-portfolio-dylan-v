@@ -4,15 +4,15 @@
     "questionArr":[
       {"question":"What is the symbol for Carbon?",
         "options":["Ce","C"],
-        "correctOption":1}
+        "correctIndex":1}
         ,
       {"question":"What is the symbol for Iron?",
         "options":["Fe","I"],
-        "correctOption":0}
+        "correctIndex":0}
         ,
       {"question":"What is the symbol for Hydrogen?",
         "options":["Hy","He","H"],
-        "correctOption":2}
+        "correctIndex":2}
       ]
       },
   {
@@ -20,15 +20,15 @@
     "questionArr":[
       {"question":"Which is a correct team name in the NBA?",
         "options":["New York Bulls","Houston Rockets"],
-        "correctOption":1}
+        "correctIndex":1}
         ,
       {"question":"Which is a correct team name in the MLB?",
         "options":["Boston Red Sox","Dallas Clubs"],
-        "correctOption":0}
+        "correctIndex":0}
         ,
       {"question":"Which is a correct team name in the MLS",
         "options":["Houston Oilers","Los Angeles Rams","New England Revolution"],
-        "correctOption":2}
+        "correctIndex":2}
       ]
       },
   {
@@ -36,15 +36,15 @@
         "questionArr":[
           {"question":"1 + 1 = ?",
             "options":["1","2"],
-            "correctOption":1}
+            "correctIndex":1}
             ,
           {"question":"2 * 9 - 5 = ?",
             "options":["13","25"],
-            "correctOption":0}
+            "correctIndex":0}
             ,
           {"question":"18 - 4 = ?",
             "options":["1","2","3"],
-            "correctOption":2}
+            "correctIndex":2}
           ]
       },
       {
@@ -52,15 +52,15 @@
         "questionArr":[
           {"question":"What year did Duke relocate to Durham?",
             "options":["1900","1892"],
-            "correctOption":1}
+            "correctIndex":1}
             ,
           {"question":"What was the regular decision acceptance rate this year?",
             "options":["6.5%","9.1%"],
-            "correctOption":0}
+            "correctIndex":0}
             ,
           {"question":"How many Twitter followers does the university account have?",
             "options":["23k","109k","65k"],
-            "correctOption":2}
+            "correctIndex":2}
           ]
     }
 ]
