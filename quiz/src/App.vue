@@ -3,22 +3,21 @@
     <div id="quiz">
       <div id="top">
         <h1 v-show="mode=='init'">Choose a quiz below:</h1>
-        <h1 v-show="mode=='takeQuiz'"> Current quiz: {{quizArr[indexQuiz].quizName}} </h1>
+        <h1 v-show="mode=='takeQuiz' || mode=='submit'"> Current quiz: {{quizArr[indexQuiz].quizName}} </h1>
         <h1 id="question" v-show="mode=='takeQuiz'">{{ quizArr[indexQuiz].questionArr[indexCurrQ].question }}</h1>
-        <h1 v-show="mode=='endQuiz'">Quiz complete! You got {{ Math.floor(total/quizArr[indexQuiz].questionArr.length * 100) }}% ({{ total + "/" + quizArr[indexQuiz].questionArr.length }}) correct.</h1>
+        <h1 v-show="mode=='endQuiz'">Quiz complete! You got {{ percentage }}% ({{ total + "/" + (quizArr[indexQuiz].questionArr.length-1) }}) correct.</h1>
       </div>
       <a class="button" v-on:click="init(quizArr.indexOf(quiz))" v-show="mode=='init'"v-for="quiz in quizArr":key="JSON.stringify(quiz)">
-         {{ quiz.quizName }}
+         {{quiz.quizName}}
       </a>
-      <a class="button" v-on:click="submit(optionIndex)" v-show="mode=='takeQuiz'" v-for="(option, optionIndex) in quizArr[indexQuiz].questionArr[indexCurrQ].options" :key="JSON.stringify(option)">
-         {{ option }}
+      <a class="button" v-on:click="submit(optionIndex)" v-show="mode=='takeQuiz' || mode=='submit'" v-for="(option, optionIndex) in quizArr[indexQuiz].questionArr[indexCurrQ].options" :key="JSON.stringify(option)">
+         {{option}}
       </a>
-      <a class="button" v-on:click="restart" v-show="mode=='endQuiz'"> Take another quiz!</a>
-      <div v-show="mode=='takeQuiz' || mode=='endQuiz'" id="bottom">
+      <a class="button" v-on:click="restart" v-show="mode=='endQuiz' "> Take another quiz!</a>
+      <div id="bottom" v-show="mode=='takeQuiz' || mode=='submit'">
         <div>
-          <p v-show="mode=='takeQuiz'">Question {{ indexCurrQ + 1 + " / " + quizArr[indexQuiz].questionArr.length }}</p>
-          <button class="wrongAnswer" v-on:click="resubmit()" v-show="mode=='takeQuiz'" :class="{greyedOut: wrongIndexArr.length == 0}">
-          <p>You got a question wrong! Try again.</p>
+          <button class="wrongAnswer" v-on:click="resubmit()" v-show="mode=='takeQuiz' || mode=='submit'" :class="{greyedOut: wrongIndexArr.length == 0}">
+          <p>You got a question wrong! Go back.</p>
           </button>
         </div>
       </div>
@@ -43,12 +42,26 @@ export default {
       total: 0,
       quizColor: "",
       fontType:"",
+      percentage:0,
     }
   },
   methods: {
     submit(index) { //Compare right answer index specified in JSON to index that user selected
       if (this.quizArr[this.indexQuiz].questionArr[this.indexCurrQ].correctIndex == index) {
         this.total++; //Increment total for percentage at end of quiz
+        if (this.indexCurrQ == this.quizArr[this.indexQuiz].questionArr.length-1){
+          this.total--;
+          this.percentage= Math.floor(this.total/(this.quizArr[this.indexQuiz].questionArr.length-1 * 100));
+          var quizLen = this.quizArr[this.indexQuiz].questionArr.length - 1;
+          this.percentage= Math.floor((this.total/quizLen)*100);
+          console.log("final score: "+this.total);
+          console.log("quiz length: "+ quizLen);
+          console.log(this.percentage);
+        }
+        if (this.indexCurrQ == this.quizArr[this.indexQuiz].questionArr.length-2){
+          this.mode="submit";
+          console.log("Submit mode active");
+        }
         console.log("New total: " + this.total);
       } else {
         console.log("Wrong answer at index: " + index);

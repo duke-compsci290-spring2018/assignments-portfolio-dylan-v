@@ -10,9 +10,9 @@
         "options":["Fe","I"],
         "correctIndex":0}
         ,
-      {"question":"What is the symbol for Hydrogen?",
-        "options":["Hy","He","H"],
-        "correctIndex":2}
+      {"question":"Make sure to check your answers before submitting!",
+        "options":["Submit"],
+        "correctIndex":0}
       ]
       },
   {
@@ -26,9 +26,9 @@
         "options":["Boston Red Sox","Dallas Clubs"],
         "correctIndex":0}
         ,
-      {"question":"Which is a correct team name in the MLS",
-        "options":["Houston Oilers","Los Angeles Rams","New England Revolution"],
-        "correctIndex":2}
+      {"question":"Make sure to check all your wrong answers!",
+        "options":["Submit"],
+        "correctIndex":0}
       ]
       },
   {
@@ -42,9 +42,9 @@
             "options":["13","25"],
             "correctIndex":0}
             ,
-          {"question":"18 - 4 = ?",
-            "options":["1","2","3"],
-            "correctIndex":2}
+          {"question":"Make sure to check all your wrong answers!",
+            "options":["Submit"],
+            "correctIndex":0}
           ]
       },
       {
@@ -58,9 +58,9 @@
             "options":["6.5%","9.1%"],
             "correctIndex":0}
             ,
-          {"question":"How many Twitter followers does the university account have?",
-            "options":["23k","109k","65k"],
-            "correctIndex":2}
+          {"question":"Make sure to check all your wrong answers!",
+            "options":["Submit"],
+            "correctIndex":0}
           ]
     }
 ]
