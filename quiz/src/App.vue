@@ -53,15 +53,15 @@ export default {
       } else {
         console.log("Wrong answer at index: " + index);
         console.log("Wrong answer added to wrongIndexArr");
-        this.wrongIndexArr.push(index);
+        this.wrongIndexArr.push(index); //Add index of wrong answer to array so that user can return later
       }
       if (this.indexCurrQ < this.quizArr[this.indexQuiz].questionArr.length-1) { //Keep track of question index
-          this.indexCurrQ = this.indexNextQ;
+          this.indexCurrQ = this.indexNextQ; //Advance to next question
           this.indexNextQ++;
       } else { //Reached the end of the quiz, clears information and allow user to reset
-        this.mode = "endQuiz";
         var emptyArry = this.wrongIndexArr;
-        this.wrongIndexArr=[];
+        this.wrongIndexArr=[]; //Clear wrong answers
+        this.mode = "endQuiz";
         this.indexCurrQ = 0;
         this.indexNextQ = 1;
         console.log("Reset inital values");
