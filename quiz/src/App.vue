@@ -48,7 +48,7 @@ export default {
   methods: {
     submit(index) { //Compare right answer index specified in JSON to index that user selected
       if (this.quizArr[this.indexQuiz].questionArr[this.indexCurrQ].correctIndex == index) {
-        this.total++;
+        this.total++; //Increment total for percentage at end of quiz
         console.log("New total: " + this.total);
       } else {
         console.log("Wrong answer at index: " + index);
