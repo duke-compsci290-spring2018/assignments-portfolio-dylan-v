@@ -7,7 +7,7 @@
         <h1 id="question" v-show="mode=='takeQuiz'">{{ quizArr[indexQuiz].questionArr[indexCurrQ].question }}</h1>
         <h1 v-show="mode=='endQuiz'">Quiz complete! You got {{ percentage }}% ({{ total + "/" + (quizArr[indexQuiz].questionArr.length-1) }}) correct.</h1>
       </div>
-      <a class="button" v-on:click="init(quizArr.indexOf(quiz))" v-show="mode=='init'"v-for="quiz in quizArr":key="JSON.stringify(quiz)">
+      <a class="button" v-on:click="init(quizArr.indexOf(quiz))" v-show="mode=='init'" v-for="quiz in quizArr":key="JSON.stringify(quiz)">
          {{quiz.quizName}}
       </a>
       <a class="button" v-on:click="submit(optionIndex)" v-show="mode=='takeQuiz' || mode=='submit'" v-for="(option, optionIndex) in quizArr[indexQuiz].questionArr[indexCurrQ].options" :key="JSON.stringify(option)">
@@ -49,9 +49,8 @@ export default {
     submit(index) { //Compare right answer index specified in JSON to index that user selected
       if (this.quizArr[this.indexQuiz].questionArr[this.indexCurrQ].correctIndex == index) {
         this.total++; //Increment total for percentage at end of quiz
-        if (this.indexCurrQ == this.quizArr[this.indexQuiz].questionArr.length-1){
+        if (this.indexCurrQ == this.quizArr[this.indexQuiz].questionArr.length-1){ //Deals with last "submit question"
           this.total--;
-          this.percentage= Math.floor(this.total/(this.quizArr[this.indexQuiz].questionArr.length-1 * 100));
           var quizLen = this.quizArr[this.indexQuiz].questionArr.length - 1;
           this.percentage= Math.floor((this.total/quizLen)*100);
           console.log("final score: "+this.total);
@@ -68,7 +67,7 @@ export default {
         console.log("Wrong answer added to wrongIndexArr");
         this.wrongIndexArr.push(index); //Add index of wrong answer to array so that user can return later
       }
-      if (this.indexCurrQ < this.quizArr[this.indexQuiz].questionArr.length-1) { //Keep track of question index
+      if (this.indexCurrQ < this.quizArr[this.indexQuiz].questionArr.length-1) {
           this.indexCurrQ = this.indexNextQ; //Advance to next question
           this.indexNextQ++;
       } else { //Reached the end of the quiz, clears information and allow user to reset
@@ -100,11 +99,11 @@ export default {
       if (index == 2){
         this.backgroundColor = "linear-gradient(to right, #ff9966, #ff5e62)";
       }
-      if (index == 3){
+      else{
         this.backgroundColor = "linear-gradient(to right, #0575e6, #021b79)";
       }
-      this.indexQuiz = index; //Specify quiz for use in other function
-      this.mode = "takeQuiz";
+      this.indexQuiz = index; //Update quizIndex
+      this.mode = "takeQuiz"; //Update quiz mode
     },
     restart() { //Reset app variables to initial values
       this.mode = "init";
