@@ -99,7 +99,7 @@ export default {
       if (index == 2){
         this.backgroundColor = "linear-gradient(to right, #ff9966, #ff5e62)";
       }
-      else{
+      if (index==3){
         this.backgroundColor = "linear-gradient(to right, #0575e6, #021b79)";
       }
       this.indexQuiz = index; //Update quizIndex
