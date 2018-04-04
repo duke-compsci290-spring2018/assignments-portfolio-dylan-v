@@ -2,9 +2,9 @@
   <div id="app" v-bind:style="{background: backgroundColor}">
     <div id="quiz">
       <div id="top">
+        <h1 v-show="mode=='init'">Choose a quiz below:</h1>
         <h1 v-show="mode=='takeQuiz'"> Current quiz: {{quizArr[quizIndex].quizName}} </h1>
         <h1 id="question" v-show="mode=='takeQuiz'">{{ quizArr[quizIndex].questionArr[questionIndex].question }}</h1>
-        <h1 v-show="mode=='init'">Choose a quiz below:</h1>
         <h1 v-show="mode=='endQuiz'">Quiz complete! You got {{ Math.floor(total/quizArr[quizIndex].questionArr.length * 100) }}% ({{ total + "/" + quizArr[quizIndex].questionArr.length }}) correct.</h1>
       </div>
       <a class="button" v-on:click="init(quizArr.indexOf(quiz))" v-show="mode=='init'"v-for="quiz in quizArr":key="JSON.stringify(quiz)">
