@@ -46,8 +46,37 @@ export default {
     }
   },
   methods: {
+    submit(index) { //Compare right answer index specified in JSON to index that user selected
+      if (this.quizArr[this.quizIndex].questionArr[this.questionIndex].correctIndex == index) {
+        this.total++;
+        console.log("New total: " + this.total);
+      } else {
+        console.log("Wrong answer at index: " + index);
+        console.log("Wrong answer added to wrongIndexArr");
+        this.wrongIndexArr.push(index);
+      }
+      if (this.questionIndex < this.quizArr[this.quizIndex].questionArr.length-1) { //Keep track of question index
+          this.questionIndex = this.nextQuestionIndex;
+          this.nextQuestionIndex++;
+      } else { //Reached the end of the quiz, clears information and allow user to reset
+        this.mode = "endQuiz";
+        var emptyArry = this.wrongIndexArr;
+        this.wrongIndexArr=[];
+        this.questionIndex = 0;
+        this.nextQuestionIndex = 1;
+        console.log("Reset inital values");
+      }
+    },
+    resubmit() { //Go back to index of wrong answer, then return to current
+      if (this.wrongIndexArr.length > 0) {
+        var currentQuestion = this.questionIndex;
+        this.nextQuestionIndex = currentQuestion; //Remember index of current question
+        this.questionIndex = this.wrongIndexArr.shift(); //Go back to wrong question, clear it from arr, then return to current question
+        console.log("Current index at " + this.nextQuestionIndex);
+        console.log("Going back to index " + currentQuestion);
+      }
+    },
     init(index) { //Based on what the user selects, set up approperiate quiz
-      this.quizIndex = index; //Specify quiz for use later
       //Modify background based on index
       if (index == 0){
         this.backgroundColor = "linear-gradient(to right, #5f2c82, #49a09d)";
@@ -61,43 +90,8 @@ export default {
       if (index == 3){
         this.backgroundColor = "linear-gradient(to right, #0575e6, #021b79)";
       }
+      this.quizIndex = index; //Specify quiz for use in other function
       this.mode = "takeQuiz";
-    },
-    submit(index) { //Compare right answer index specified in JSON to index that user selected
-      if (this.quizArr[this.quizIndex].questionArr[this.questionIndex].correctIndex == index) {
-        this.total++;
-      } else {
-        console.log("Wrong answer at index: " + index);
-        console.log("Wrong answer added to wrongIndexArr");
-        this.wrongIndexArr.push(index);
-      }
-      if (this.questionIndex < this.quizArr[this.quizIndex].questionArr.length-1) { //Keep track of question index
-        if (this.questionIndex < this.wrongIndexArr[0]) {
-          var goBackTo = this.wrongIndexArr[0];
-          this.wrongIndexArr.shift()
-          this.questionIndex = goBackTo;
-          console.log("Current index " + this.questionIndex);
-          console.log("Going back to index " + goBackTo);
-        } else {
-          this.questionIndex = this.nextQuestionIndex;
-          this.nextQuestionIndex++;
-        }
-      } else { //End of the quiz, clears information and allow user to reset
-        this.mode = "endQuiz";
-        var emptyArry = this.wrongIndexArr;
-        this.wrongIndexArr=[];
-        this.questionIndex = 0;
-        this.nextQuestionIndex = 1;
-        console.log("Reset inital values");
-      }
-    },
-    resubmit() { //Go back to index of wrong answer, then return to current
-      if (this.wrongIndexArr.length > 0) {
-        this.nextQuestionIndex = this.questionIndex; //Remember index of current question
-        this.questionIndex = this.wrongIndexArr.shift(); //Go back to wrong question, clear it from arr, then return to current question
-        console.log("Current index at " + this.nextQuestionIndex);
-        console.log("Going back to index " + this.questionIndex);
-      }
     },
     restart() { //Reset app variables to initial values
       this.mode = "init";
