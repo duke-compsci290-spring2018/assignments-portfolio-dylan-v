@@ -45,8 +45,9 @@ button:focus{
   background: linear-gradient(to right, #4568dc, #b06ab3);
   text-align:center;
   position:absolute;
+  height: 100%;
   width: 100%;
-  height:auto;
+  margin: 0;
 }
 #quiz{
   width:1000px;

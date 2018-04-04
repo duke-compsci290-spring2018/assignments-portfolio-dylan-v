@@ -7,17 +7,17 @@
         <h1 v-show="mode=='init'">Choose a quiz below:</h1>
         <h1 v-show="mode=='endQuiz'">Quiz complete! You got {{ Math.floor(total/quizArr[quizIndex].questionArr.length * 100) }}% ({{ total + "/" + quizArr[quizIndex].questionArr.length }}) correct.</h1>
       </div>
-      <a class="button" v-show="mode=='init'"v-for="quiz in quizArr":key="JSON.stringify(quiz)"@click="init(quizArr.indexOf(quiz))">
+      <a class="button" v-on:click="init(quizArr.indexOf(quiz))" v-show="mode=='init'"v-for="quiz in quizArr":key="JSON.stringify(quiz)">
          {{ quiz.quizName }}
       </a>
-      <a class="button" v-show="mode=='takeQuiz'" v-for="(option, optionIndex) in quizArr[quizIndex].questionArr[questionIndex].options" :key="JSON.stringify(option)" @click="submit(optionIndex)">
+      <a class="button" v-on:click="submit(optionIndex)" v-show="mode=='takeQuiz'" v-for="(option, optionIndex) in quizArr[quizIndex].questionArr[questionIndex].options" :key="JSON.stringify(option)">
          {{ option }}
       </a>
-      <a class="button" v-show="mode=='endQuiz'" @click="restart"> Take another quiz!</a>
+      <a class="button" v-on:click="restart" v-show="mode=='endQuiz'"> Take another quiz!</a>
       <div v-show="mode=='takeQuiz' || mode=='endQuiz'" id="bottom">
         <div>
           <p v-show="mode=='takeQuiz'">Question {{ questionIndex + 1 + " / " + quizArr[quizIndex].questionArr.length }}</p>
-          <button v-show="mode=='takeQuiz'" @click="resubmit()" class="wrongAnswer" :class="{greyedOut: wrongIndexArr.length == 0}">
+          <button class="wrongAnswer" v-on:click="resubmit()" v-show="mode=='takeQuiz'" :class="{greyedOut: wrongIndexArr.length == 0}">
           <p>You got a question wrong! Try again.</p>
           </button>
         </div>
@@ -42,6 +42,7 @@ export default {
       wrongIndexArr: [],
       total: 0,
       quizColor: "",
+      fontType:"",
     }
   },
   methods: {
