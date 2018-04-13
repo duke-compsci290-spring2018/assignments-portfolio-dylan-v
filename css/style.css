@@ -28,11 +28,11 @@ h5 {
 	color:white;
 }
 a:link {
-	color: 	gold;
+	color: 	blue;
 }
 
 a:visited {
-		color:gold;
+		color:blue;
 }
 li {
 	list-style-type: none;
@@ -67,8 +67,8 @@ footer{
 	color: white;
 	margin-bottom: 0px;
 }
-.listlink{
-	color:blue;
+#goldlink{
+	color: gold;
 }
 
 

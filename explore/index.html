@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Three.js Exploration</title>
+    <link type = "text/css" rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/tween.js"></script>
+    <script type="text/javascript" src="js/TrackballControls.js"></script>
+    <script type="text/javascript">
+    
+        //Global variables that are updated with each game loop
+        var camera, scene, renderer, mesh, controls;
+        document.addEventListener("DOMContentLoaded", start, false);
+
+        //Call content to be generated
+        function start() {
+          renderer = new THREE.WebGLRenderer({
+              antialias: true
+          });
+          //Set background color, initial size of the scene
+          renderer.setClearColor(0x000000, 1.0);
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          document.body.appendChild(renderer.domElement);
+          scene = new THREE.Scene();
+
+          //Call specific scene details (light, camera, controls)
+          addLightAndCamera();
+          addSphere();
+          controls();
+          //Run animation loop, which is continuously repeated
+          run();
+
+          //"Listen"/react when resizing even occurs
+          window.addEventListener('resize', resizeWindow, false);
+        }
+
+        //Detect screen resizing to dynamically scale content
+        function resizeWindow() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        //Request new frame, update controls, tween, and re-render scene
+        function run() {
+            requestAnimationFrame(run);
+            controls.update();
+            //Functionality from Tween.js
+            TWEEN.update();
+            //Render new scene
+            renderer.render(scene, camera);
+        }
+        function addSphere() {
+          var material = new THREE.MeshLambertMaterial({
+              shading: THREE.FlatShading,
+              color: 0x005dff,
+              transparent: false
+          });
+          //(initial size of shape, detail of shape)
+          var geometry = new THREE.IcosahedronGeometry(40, 3);
+          mesh = new THREE.Mesh(geometry, material);
+          scene.add(mesh);
+        }
+        function addLightAndCamera() {
+
+          //Set up and add camera to scene
+          camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 10, 1000);
+          camera.position.z = 100;
+          scene.add(camera);
+
+          //Set up and add light to scene
+          var pointLight = new THREE.PointLight(0xfffff0);
+          pointLight.position.x = 20;
+          pointLight.position.y = 50;
+          pointLight.position.z = 100;
+          scene.add(pointLight);
+          // var pointLight2 = new THREE.PointLight(0xfffff0);
+          // pointLight2.position.x = 20;
+          // pointLight2.position.y = 50;
+          // pointLight2.position.z = 100;
+          // scene.add(pointLight2);
+        }
+        function controls() {
+          //Changes the camera position, creating sense of movement through space
+          controls = new THREE.TrackballControls(camera, renderer.domElement);
+          controls.staticMoving = false;
+          controls.noZoom = false;
+          controls.noPan = false;
+          controls.minDistance = 70;
+          controls.maxDistance = 200;
+          controls.dynamicDampingFactor = 0.5;
+          controls.rotateSpeed = 0.4;
+
+          //Create new Tween object with given
+          //Function from Tween documentation
+          var tween = new TWEEN.Tween({
+                  scale: 100
+              })
+              .to({
+                  scale: 80
+              }, 1000)
+              .easing(TWEEN.Easing.Cubic.In)
+              .easing(TWEEN.Easing.Cubic.Out)
+              .onUpdate(function () {
+                  mesh.scale.set(this.scale / 100.0, this.scale / 100.0, this.scale / 100.0);
+              });
+          tween.yoyo(true); //Tween backwards and forwards
+          tween.repeat(Infinity);
+          tween.start();
+        }
+    </script>
+    </head>
+    <body>
+     <div id="title">Three.js Exploration</div>
+     <div id="description">Interact with the sphere by clicking and dragging!</div>
+    </body>
+</html>
