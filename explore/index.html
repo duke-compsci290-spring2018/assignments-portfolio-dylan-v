@@ -8,7 +8,7 @@
     <script type="text/javascript" src="js/tween.js"></script>
     <script type="text/javascript" src="js/TrackballControls.js"></script>
     <script type="text/javascript">
-    
+
         //Global variables that are updated with each game loop
         var camera, scene, renderer, mesh, controls;
         document.addEventListener("DOMContentLoaded", start, false);
@@ -19,7 +19,7 @@
               antialias: true
           });
           //Set background color, initial size of the scene
-          renderer.setClearColor(0x000000, 1.0);
+          renderer.setClearColor(0xff3300, 1.0);
           renderer.setSize(window.innerWidth, window.innerHeight);
           document.body.appendChild(renderer.domElement);
           scene = new THREE.Scene();
@@ -75,6 +75,7 @@
           pointLight.position.y = 50;
           pointLight.position.z = 100;
           scene.add(pointLight);
+          scene.add(new THREE.AmbientLight(0xff3300))
           // var pointLight2 = new THREE.PointLight(0xfffff0);
           // pointLight2.position.x = 20;
           // pointLight2.position.y = 50;

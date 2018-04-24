@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./data/bird_1f426.png">
+
+    <title>Twitter Analysis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Work+Sans" rel="stylesheet">
+
+</script>
+
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Visualizations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Analysis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white" style="background:transparent url('data/cover.jpg') no-repeat center center /cover">
+      <div class="container text-center">
+        <h1 id="title">#MarchForOurLives Hashtag Analysis</h1>
+
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div>
+            <h2>📝 Research Question</h2>
+            <p>Which Twitter users drew the most attention during the #MarchForOurLives protest on March 24, 2018, in Washington D.C.</p>
+            <p>• Who are these users? What are these users saying? Are they politicians, celebrities, regular people?</p>
+            <p>• What does this mean in terms of social media, protests of the future, and the power of data analysis?</p>
+            <h2>🔬 Methodology</h2>
+            <p>• Tweets containing #MarchForOurLives were scrapped using Twitter's Search Tweets API during the time of the event.</p>
+            <p>• Using Tableau, the data was then visualized in different categories.</p>
+            <h2> ☕ Categories of Interest</h2>
+            <p>• 🗣️ Most mentioned users</p>
+            <p>• 📊  Tweet breakdown (Retweets, original Tweets, @mentions)</p>
+            <p>• #️⃣  Hashtags (What is the conversation?)</p>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-light">
+
+
+      <div class="container">
+        <h1><b> 1) Night before.</b></h1>
+        <h1> <i> Data from 12 AM to 3 AM UTC  (8 PM to 11 PM EST)</i></h1><br>
+        <div class="row">
+          <div><br>
+          <h1>🗣️ Most Mentioned Users </h1>
+          <h3><i>*mention = @mention OR Retweet</i></h3><br>
+          <ul>
+            <li>Sample size: 24589 Tweets.</li>
+            <li>These are the top 14 most mentioned users during this time interval.</li>
+          </ul>
+          <iframe src="./data/0-4_MostMentioned.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="./data/0-4_MostMentioned.pdf">Download PDF</a>
+          </iframe>
+        </div>
+        <div class="row">
+          <div><br>
+          <h1>📊 Tweet Breakdown </h1>
+          <ul>
+            <li>Sample size: 24589 Tweets.</li>
+            <li>During the entire protest, Retweets were by far the most numerous Tweet type. The vast majority of these Retweets come from the most mentioned users.</li>
+          </ul>
+          <iframe src="./data/0-4_TweetType.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="./data/0-4_MostMentioned.pdf">Download PDF</a>
+          </iframe>
+        </div>
+        <div class="row">
+          <div><br>
+          <h1>#️⃣ Hashtags </h1>
+          <ul>
+            <li>Hashtags associated with #MarchForOurLives used the night before the event.</li>
+            <li>ex. #iwillmarch is unique to this dataset.</li>
+          </ul>
+          <iframe src="./data/0-4_Hashtags.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="./data/0-4_Hashtags.pdf">Download PDF</a>
+          </iframe>
+        </div>
+
+
+        <div class="container">
+          <br><hr>
+          <h1><b> 2) Morning.</b></h1>
+          <h1> <i>Data from 1 PM to 2 PM UTC  (9 AM to 10 AM EST)</i></h1><br>
+          <div class="row">
+            <div><br>
+            <h1>🗣️ Most Mentioned Users </h1>
+            <h3><i>*mention = @mention OR Retweet</i></h3><br>
+            <ul>
+              <li>Some new users compared to earlier data set. However, the top users remain the same.</li>
+            </ul>
+            <iframe src="./data/1-2_MostMentioned.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_MostMentioned.pdf">Download PDF</a>
+            </iframe>
+          </div>
+          <div class="row">
+            <div><br>
+            <h1>📈 Mentions vs. Time </h1>
+            <ul>
+              <li>Positive trend in activity as people wake up and mobalize for the event, Retweeting leaders, politicians, and other users of influence.</li>
+            </ul>
+            <iframe src="./data/1-2_MentionVTime.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_MentionVTime.pdf">Download PDF</a>
+            </iframe>
+          </div>
+          <div class="row">
+            <div><br>
+            <h1>📊 Tweet Breakdown </h1>
+            <ul>
+              <li>Interesting peak at 1:56 PM UTC cooresponds to a peak in the graph above. Popular users show their influence on Retweets.</li>
+            </ul>
+            <iframe src="./data/1-2_TweetType.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_TweetType.pdf">Download PDF</a>
+            </iframe>
+          </div>
+          <div class="row">
+            <div><br>
+            <h1>#️⃣ Hashtags </h1>
+            <ul>
+              <li>#saturdaymorning, #signsforourlives in reaction to the time and start of the protest.</li>
+            </ul>
+            <iframe src="./data/1-2_Hashtags.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_Hashtags.pdf">Download PDF</a>
+            </iframe>
+          </div>
+
+          <div class="container">
+            <br><hr>
+            <h1><b> 3) Afternoon.</b></h1>
+            <h1> <i>Data from 6 PM to 6:30 PM UTC  (2 PM to 2:30 PM EST)</i></h1><br>
+            <div class="row">
+              <div><br>
+              <h1>🗣️ Most Mentioned Users </h1>
+              <h3><i>*mention = @mention OR Retweet</i></h3><br>
+              <ul>
+                <li>Celebrities (ex. hasley) begin to trend. Key figures within the movement continue to be the most mentioned.</li>
+              </ul>
+              <iframe src="./data/6-630_MostMentioned.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_MostMentioned.pdf">Download PDF</a>
+              </iframe>
+            </div>
+            <div class="row">
+              <div><br>
+              <h1>📊 Tweet Breakdown </h1>
+              <ul>
+                <li>Constant activity during the height of the protest. Dip towards the end is a byproduct of data collection ending for the interval.</li>
+              </ul>
+              <iframe src="./data/6-630_TweetType.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_TweetType.pdf">Download PDF</a>
+              </iframe>
+            </div>
+            <div class="row">
+              <div><br>
+              <h1>#️⃣ Hashtags </h1>
+              <ul>
+                <li>Popular hashtags used with #MarchForOurLives.</li>
+                <li>As the protest begins to peak in activity, hashtag use gives us insight into the conversation.</li>
+              </ul>
+              <iframe src="./data/6-630_Hashtags.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_Hashtags.pdf">Download PDF</a>
+              </iframe>
+            </div>
+
+          <div class="row">
+            <div><br>
+              <hr>
+
+              <h1>😎 Top users from multiple datasets</h1>
+              <p><i> *Visualizations of some datasets not included. All Tableau files are available.</i></p>
+              <ul>
+                <li> funder: 17995 mentions</li>
+                <li>emma4change: 13495 mentions</li>
+                <li>amarch4ourlives: 7517 mentions</li>
+                <li>tedlieu: 3109 mentions</li>
+                <li>therickydavila: 2577 mentions</li>
+                <li>krassenstein: 2400 mentions</li>
+                <li>sallyqyates: 2071 mentions</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container">
+            <br><hr>
+            <h1><b>🕰️ 24 Hour Data</b></h1>
+            <h1> <i>Data collected during the entire event.</i></h1>
+            <p><i>*The following visualizations are from a much larger dataset with more time coverage.</i></p><br>
+            <div class="row">
+              <div><br>
+              <h1>🗣️ Most Mentioned Users </h1>
+              <h3><i>In this dataset, mentions were calculated based exclusively on @mentions. These users are those that are Tweeted at the most.</i></h3><br>
+              <ul>
+                <li>@donaldtrump and @tomilahren are Tweeted at by protestors expressing their views, rather than because people are Retweeting their content about the protest.</li>
+              </ul>
+              <iframe src="./data/AllDay_MostMentioned.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_MostMentioned.pdf">Download PDF</a>
+              </iframe>
+            </div>
+            <div class="row">
+              <div><br>
+              <h1>#️⃣📊  Hashtags </h1>
+              <ul>
+                <li>Tweets from this dataset highly associated with #NeverAgain.</li>
+                <li>#blacklivesmatter was popular. Reflects multiple conversations within the gun debate.</li>
+
+              </ul>
+              <iframe src="./data/AllDay_Hashtags.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_Hashtags.pdf">Download PDF</a>
+              </iframe>
+            </div>
+            <div class="row">
+              <div><br>
+              <h1>🎇 Tweet Activity </h1>
+              <ul>
+                <li>Protest grows exponentially leading up to 3 PM, when David Hogg spoke.</li>
+              </ul>
+              <iframe src="./data/AllDay_Tweets.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/AllDay_Tweets.pdf">Download PDF</a>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2>Analysis</h2>
+            <p class="lead">For each of the top users, I am going to analyse their top Tweets from the protest. I hope to look at the language, timing, and potential effect of at their most popular Tweet created during the protest. The top users were calculated from the multiple datasets taken in intervals throughout the day. However, I hope to use the data collected over 24 hours to help support the claims that I make about each user and their potential impact.</p>
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+  </body>
+</html>
