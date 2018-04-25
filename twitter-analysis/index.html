@@ -16,7 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 </script>
 
@@ -59,17 +59,17 @@
         <div class="row">
           <div>
             <h2>📝 Research Question</h2>
-            <p>Which Twitter users drew the most attention during the #MarchForOurLives protest on March 24, 2018, in Washington D.C.</p>
-            <p>• Who are these users? What are these users saying? Are they politicians, celebrities, regular people?</p>
-            <p>• What does this mean in terms of social media, protests of the future, and the power of data analysis?</p>
+            <p>Which Twitter users drew the most attention during the #MarchForOurLives protest on March 24, 2018, in Washington D.C.?</p>
+            <p>• Who are these users? What are they saying?</p>
+            <p>• Further, what does this mean in terms of the role of social media in protests of the future and the power of data analysis?</p>
             <h2>🔬 Methodology</h2>
             <p>• Tweets containing #MarchForOurLives were scrapped using Twitter's Search Tweets API during the time of the event.</p>
             <p>• Using Tableau, the data was then visualized in different categories.</p>
+            <p>• Finally, using the data, top users were calculated based on Retweets and @mentions. Then, their top Tweet during the protest was identified and analysed.</p>
             <h2> ☕ Categories of Interest</h2>
-            <p>• 🗣️ Most mentioned users</p>
             <p>• 📊  Tweet breakdown (Retweets, original Tweets, @mentions)</p>
-            <p>• #️⃣  Hashtags (What is the conversation?)</p>
-
+            <p>• 📈 Mentions (Retweets or @mentions) vs. Time </p>
+            <p>• 🗣️ Most Mentioned Users </p>
 
 
 
@@ -80,135 +80,299 @@
 
     <section id="services" class="bg-light">
 
-
-      <div class="container">
         <h1><b> 1) Night before.</b></h1>
         <h1> <i> Data from 12 AM to 3 AM UTC  (8 PM to 11 PM EST)</i></h1><br>
-        <div class="row">
-          <div><br>
-          <h1>🗣️ Most Mentioned Users </h1>
+        <h1> 📊 Tweet Breakdown </h1>
+        <div class='tableauPlaceholder' id='viz1524623149465' style='position: relative'>
+          <noscript>
+            <a href='#'><img alt='Tweet Type ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4TweetBreakdown&#47;TweetType&#47;1_rss.png' style='border: none' /></a>
+          </noscript>
+          <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='0-4TweetBreakdown&#47;TweetType' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4TweetBreakdown&#47;TweetType&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1524623149465');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width='85%';
+          vizElement.style.height=(divElement.offsetWidth*0.45)+'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+        <br><h1>📈 Mentions vs. Time </h1>
+        <div class='tableauPlaceholder' id='viz1524623788450' style='position: relative'>
+          <noscript>
+            <a href='#'><img alt='Most Mentioned vs. Time ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4MentionsVTime&#47;MostMentionedvs_Time&#47;1_rss.png' style='border: none' /></a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='0-4MentionsVTime&#47;MostMentionedvs_Time' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4MentionsVTime&#47;MostMentionedvs_Time&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1524623788450');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '85%';
+            vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+        <br><h1>🗣️ Most Mentioned Users </h1>
+        <h3><i>*mention = @mention OR Retweet</i></h3><br>
+        <div class='tableauPlaceholder' id='viz1524623968606' style='position: relative'>
+          <noscript>
+            <a href='#'><img alt='Most Mentioned Bar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4Mentions&#47;MostMentionedBar&#47;1_rss.png' style='border: none' /></a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='0-4Mentions&#47;MostMentionedBar' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4Mentions&#47;MostMentionedBar&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1524623968606');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '85%';
+            vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+        <br><hr>
+        <h1><b> 2) Morning.</b></h1>
+        <h1> <i>Data from 1 PM to 2 PM UTC  (9 AM to 10 AM EST)</i></h1><br>
+        <h1> 📊 Tweet Breakdown </h1>
+        <div class='tableauPlaceholder' id='viz1524624293684' style='position: relative'>
+          <noscript>
+            <a href='#'><img alt='Tweet Breakdown ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMTweetBreakdown_0&#47;TweetBreakdown&#47;1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='start1-2PMTweetBreakdown_0&#47;TweetBreakdown' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMTweetBreakdown_0&#47;TweetBreakdown&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1524624293684');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '85%';
+            vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+        <br><h1>📈 Mentions vs. Time </h1>
+        <div class='tableauPlaceholder' id='viz1524624364072' style='position: relative'>
+          <noscript>
+            <a href='#'><img alt='Most Mentioned vs. Time ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMMentionsVTime&#47;MostMentionedvs_Time&#47;1_rss.png' style='border: none' />
+            </a></noscript><object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='start1-2PMMentionsVTime&#47;MostMentionedvs_Time' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMMentionsVTime&#47;MostMentionedvs_Time&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+          <script type='text/javascript'>
+              var divElement = document.getElementById('viz1524624364072');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              vizElement.style.width = '85%';
+              vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
+
+          <br><h1>🗣️ Most Mentioned Users </h1>
           <h3><i>*mention = @mention OR Retweet</i></h3><br>
-          <ul>
-            <li>Sample size: 24589 Tweets.</li>
-            <li>These are the top 14 most mentioned users during this time interval.</li>
-          </ul>
-          <iframe src="./data/0-4_MostMentioned.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="./data/0-4_MostMentioned.pdf">Download PDF</a>
-          </iframe>
-        </div>
-        <div class="row">
-          <div><br>
-          <h1>📊 Tweet Breakdown </h1>
-          <ul>
-            <li>Sample size: 24589 Tweets.</li>
-            <li>During the entire protest, Retweets were by far the most numerous Tweet type. The vast majority of these Retweets come from the most mentioned users.</li>
-          </ul>
-          <iframe src="./data/0-4_TweetType.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="./data/0-4_MostMentioned.pdf">Download PDF</a>
-          </iframe>
-        </div>
-        <div class="row">
-          <div><br>
-          <h1>#️⃣ Hashtags </h1>
-          <ul>
-            <li>Hashtags associated with #MarchForOurLives used the night before the event.</li>
-            <li>ex. #iwillmarch is unique to this dataset.</li>
-          </ul>
-          <iframe src="./data/0-4_Hashtags.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="./data/0-4_Hashtags.pdf">Download PDF</a>
-          </iframe>
-        </div>
+          <div class='tableauPlaceholder' id='viz1524624426312' style='position: relative'>
+            <noscript>
+              <a href='#'><img alt='Most Mentioned Bar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMMentions&#47;MostMentionedBar&#47;1_rss.png' style='border: none' />
+              </a></noscript><object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='start1-2PMMentions&#47;MostMentionedBar' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMMentions&#47;MostMentionedBar&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='filter' value='publish=yes' />
+              </object>
+            </div>
+          <script type='text/javascript'>
+              var divElement = document.getElementById('viz1524624426312');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              vizElement.style.width = '85%';
+              vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
 
-
-        <div class="container">
           <br><hr>
-          <h1><b> 2) Morning.</b></h1>
-          <h1> <i>Data from 1 PM to 2 PM UTC  (9 AM to 10 AM EST)</i></h1><br>
-          <div class="row">
-            <div><br>
-            <h1>🗣️ Most Mentioned Users </h1>
-            <h3><i>*mention = @mention OR Retweet</i></h3><br>
-            <ul>
-              <li>Some new users compared to earlier data set. However, the top users remain the same.</li>
-            </ul>
-            <iframe src="./data/1-2_MostMentioned.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_MostMentioned.pdf">Download PDF</a>
-            </iframe>
+          <h1><b> 3) Afternoon.</b></h1>
+          <h1> <i>Data from 6 PM to 6:30 PM UTC  (2 PM to 2:30 PM EST)</i></h1><br>
+          <h1> 📊 Tweet Breakdown </h1>
+          <div class='tableauPlaceholder' id='viz1524624549212' style='position: relative'>
+            <noscript>
+              <a href='#'><img alt='Tweet Type ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30TweetBreakdown&#47;TweetType&#47;1_rss.png' style='border: none' /></a>
+            </noscript><object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='6-6-30TweetBreakdown&#47;TweetType' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30TweetBreakdown&#47;TweetType&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='filter' value='publish=yes' />
+            </object>
           </div>
-          <div class="row">
-            <div><br>
-            <h1>📈 Mentions vs. Time </h1>
-            <ul>
-              <li>Positive trend in activity as people wake up and mobalize for the event, Retweeting leaders, politicians, and other users of influence.</li>
-            </ul>
-            <iframe src="./data/1-2_MentionVTime.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_MentionVTime.pdf">Download PDF</a>
-            </iframe>
-          </div>
-          <div class="row">
-            <div><br>
-            <h1>📊 Tweet Breakdown </h1>
-            <ul>
-              <li>Interesting peak at 1:56 PM UTC cooresponds to a peak in the graph above. Popular users show their influence on Retweets.</li>
-            </ul>
-            <iframe src="./data/1-2_TweetType.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_TweetType.pdf">Download PDF</a>
-            </iframe>
-          </div>
-          <div class="row">
-            <div><br>
-            <h1>#️⃣ Hashtags </h1>
-            <ul>
-              <li>#saturdaymorning, #signsforourlives in reaction to the time and start of the protest.</li>
-            </ul>
-            <iframe src="./data/1-2_Hashtags.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-              This browser does not support PDFs. Please download the PDF to view it: <a href="./data/1-2_Hashtags.pdf">Download PDF</a>
-            </iframe>
-          </div>
+          <script type='text/javascript'>
+              var divElement = document.getElementById('viz1524624549212');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              vizElement.style.width = '85%';
+              vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
 
-          <div class="container">
-            <br><hr>
-            <h1><b> 3) Afternoon.</b></h1>
-            <h1> <i>Data from 6 PM to 6:30 PM UTC  (2 PM to 2:30 PM EST)</i></h1><br>
-            <div class="row">
-              <div><br>
-              <h1>🗣️ Most Mentioned Users </h1>
-              <h3><i>*mention = @mention OR Retweet</i></h3><br>
-              <ul>
-                <li>Celebrities (ex. hasley) begin to trend. Key figures within the movement continue to be the most mentioned.</li>
-              </ul>
-              <iframe src="./data/6-630_MostMentioned.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_MostMentioned.pdf">Download PDF</a>
-              </iframe>
-            </div>
-            <div class="row">
-              <div><br>
-              <h1>📊 Tweet Breakdown </h1>
-              <ul>
-                <li>Constant activity during the height of the protest. Dip towards the end is a byproduct of data collection ending for the interval.</li>
-              </ul>
-              <iframe src="./data/6-630_TweetType.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_TweetType.pdf">Download PDF</a>
-              </iframe>
-            </div>
-            <div class="row">
-              <div><br>
-              <h1>#️⃣ Hashtags </h1>
-              <ul>
-                <li>Popular hashtags used with #MarchForOurLives.</li>
-                <li>As the protest begins to peak in activity, hashtag use gives us insight into the conversation.</li>
-              </ul>
-              <iframe src="./data/6-630_Hashtags.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_Hashtags.pdf">Download PDF</a>
-              </iframe>
-            </div>
+          <br><h1>📈 Mentions vs. Time </h1>
+          <div class='tableauPlaceholder' id='viz1524624624716' style='position: relative'>
+            <noscript>
+              <a href='#'><img alt='Most Mentioned vs. Time ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30MentionsVTime&#47;MostMentionedvs_Time&#47;1_rss.png' style='border: none' /></a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='6-6-30MentionsVTime&#47;MostMentionedvs_Time' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30MentionsVTime&#47;MostMentionedvs_Time&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+          <script type='text/javascript'>
+              var divElement = document.getElementById('viz1524624624716');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              vizElement.style.width = '85%';
+              vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
+
+          <br><h1>🗣️ Most Mentioned Users </h1>
+          <h3><i>*mention = @mention OR Retweet</i></h3><br>
+          <div class='tableauPlaceholder' id='viz1524624703910' style='position: relative'>
+            <noscript>
+              <a href='#'><img alt='Sheet 6 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30Mentions&#47;Sheet6&#47;1_rss.png' style='border: none' /></a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='6-6-30Mentions&#47;Sheet6' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30Mentions&#47;Sheet6&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+          <script type='text/javascript'>
+              var divElement = document.getElementById('viz1524624703910');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              vizElement.style.width = '85%';
+              vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          </script>
 
           <div class="row">
             <div><br>
               <hr>
-
-              <h1>😎 Top users from multiple datasets</h1>
-              <p><i> *Visualizations of some datasets not included. All Tableau files are available.</i></p>
+              <h1>😎 Most mentioned users</h1>
+              <p><i> *Not all of the data is visually represented on this page. All Tableau files are available, however.</i></p>
               <ul>
                 <li> funder: 17995 mentions</li>
                 <li>emma4change: 13495 mentions</li>
@@ -220,48 +384,22 @@
               </ul>
             </div>
           </div>
-
-          <div class="container">
-            <br><hr>
-            <h1><b>🕰️ 24 Hour Data</b></h1>
-            <h1> <i>Data collected during the entire event.</i></h1>
-            <p><i>*The following visualizations are from a much larger dataset with more time coverage.</i></p><br>
-            <div class="row">
-              <div><br>
-              <h1>🗣️ Most Mentioned Users </h1>
-              <h3><i>In this dataset, mentions were calculated based exclusively on @mentions. These users are those that are Tweeted at the most.</i></h3><br>
+          <div class="row">
+            <div><br>
+              <hr>
+              <h1>📋 What did they say?</h1>
+              <p><i>Below includes each most popular Tweet of each user during the protest. <br>Note: additional Retweets and likes have accumulated since the event.</i></p>
               <ul>
-                <li>@donaldtrump and @tomilahren are Tweeted at by protestors expressing their views, rather than because people are Retweeting their content about the protest.</li>
+                <li>funder:<br> <img src="data/funder.jpg"></li><br>
+                <li>emma4change:<br> <img src="data/emma.jpg"></li><br>
+                <li>amarch4ourlives:<br> <img src="data/sally.jpg"></li><br>
+                <li>tedlieu:<br> <img src="data/tedl.jpg"></li><br>
+                <li>therickydavila:<br> <img src="data/ricky.jpg"></li><br>
+                <li>krassenstein:<br> <img src="data/krass.jpg"></li><br>
+                <li>sallyqyates:<br> <img src="data/march.jpg"></li>
               </ul>
-              <iframe src="./data/AllDay_MostMentioned.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_MostMentioned.pdf">Download PDF</a>
-              </iframe>
-            </div>
-            <div class="row">
-              <div><br>
-              <h1>#️⃣📊  Hashtags </h1>
-              <ul>
-                <li>Tweets from this dataset highly associated with #NeverAgain.</li>
-                <li>#blacklivesmatter was popular. Reflects multiple conversations within the gun debate.</li>
-
-              </ul>
-              <iframe src="./data/AllDay_Hashtags.pdf" frameborder="0" scrolling="no"   width="800" height="500">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/6-630_Hashtags.pdf">Download PDF</a>
-              </iframe>
-            </div>
-            <div class="row">
-              <div><br>
-              <h1>🎇 Tweet Activity </h1>
-              <ul>
-                <li>Protest grows exponentially leading up to 3 PM, when David Hogg spoke.</li>
-              </ul>
-              <iframe src="./data/AllDay_Tweets.pdf" frameborder="0" scrolling="no" onload="resizeIframe(this)" width="800" height="500">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="./data/AllDay_Tweets.pdf">Download PDF</a>
-              </iframe>
             </div>
           </div>
-        </div>
-      </div>
     </section>
 
     <section id="contact">
@@ -269,10 +407,8 @@
         <div class="row">
           <div class="col-lg-8">
             <h2>Analysis</h2>
-            <p class="lead">For each of the top users, I am going to analyse their top Tweets from the protest. I hope to look at the language, timing, and potential effect of at their most popular Tweet created during the protest. The top users were calculated from the multiple datasets taken in intervals throughout the day. However, I hope to use the data collected over 24 hours to help support the claims that I make about each user and their potential impact.</p>
-
-
-
+            <p class="lead">For each of the top users, I am going to analyse their top Tweets from the protest. I hope to look at the language, timing, and potential effect of at their most popular Tweet created during the protest. I will use this information to explain the role of these popular users in mobalizing the protest and further to highlight the power that social media plays in popular protest.</p>
+            <p class="lead">Basically, the visualizations help support the idea that information during this protest was spread by influenchial users. Their Tweets were immensly popular and spread virally. Therefore, it is important to consider the following: who the user is, what they said, for what purpose, and possibly, to what effect?</p>
           </div>
         </div>
       </div>
