@@ -59,18 +59,25 @@
         <div class="row">
           <div>
             <h2>📝 Research Question</h2>
-            <p>Which Twitter users drew the most attention during the #MarchForOurLives protest on March 24, 2018, in Washington D.C.?</p>
+            <p>Research Question: Which Twitter users drew the most attention during the #MarchForOurLives D.C. protest on March 24, 2018?</p>
             <p>Follow up questions:</p>
             <p>• Who are these users, what are they saying, for what purpose, and to what effect?</p>
             <p>• What does this mean in terms of the role of social media in protests of the future and the power of data analysis?</p>
             <h2>🔬 Methodology</h2>
-            <p>• Tweets containing #MarchForOurLives were scrapped using Twitter's Search Tweets API during the time of the event.</p>
+            <p>• Tweets containing #MarchForOurLives were scrapped using Twitter's Search Tweets API during the time of the event in 1-hour intervals.</p>
             <p>• Using Tableau, the data was then visualized in different categories.</p>
             <p>• Finally, using the data, top users were calculated based on Retweets and @mentions. Then, their top Tweet during the protest was identified and analysed.</p>
-            <h2> ☕ Categories of Interest</h2>
-            <p>• 📊  Tweet Breakdown (Retweets, original Tweets, @mentions)</p>
-            <p>• 📈 Mentions (Retweets or @mentions) vs. Time </p>
-            <p>• 🗣️ Most Mentioned Users </p>
+            <h2> ☕ About the Data</h2>
+            <p>With the help of Brian Norberg, I was able to use Tableau in order to visualize over 1 million Tweets containing #MarchForOurLives. Because harvesting Tweets is power intensive on computers, Brian and I determined that harvesting Tweets from roughly 1 hour long intervals throughout the protest was the most effective way to obtain data. Below I have included visualizations from 3 intervals throughout the day: the night before, the morning of, and the afternoon of the protest. </p>
+
+            <p>Within each time interval, there are 3 categories of visualizations were most pertinent to the the research question. The categories are as follows:</p><br>
+
+            <p>📊 Tweet Breakdown: within the dataset, users will either Retweet another user, directly mentions another user, or author their own Tweet. Using regular expressions (an expression that is able to parse text and detect the presence of patterns. “@DonaldTrump” would be categorizes as an @mention).</p>
+
+            <p>📈 Mentions vs. Time: Given a user, other users may either directly mention them (@mention), or Retweet a message they personally authored (Retweet). In both cases, the Twitter handle of the user in question is included in the Tweet. Again, using regular expressions, we are able to determine how many users on Twitter mentioned a specific user. This is plotted against time to understand how a specific user is being mentioned through the course of the protest.</p>
+
+            <p>🗣️ Most Mentioned Users: Using the data from Mentions vs. Time, I was able to sum the mentions over time into a single number and plot it in a bar graph. This visualization simply reflects how many times during a given time interval a user was @mentioned or Retweeted.</p>
+
 
 
 
@@ -78,12 +85,13 @@
         </div>
       </div>
     </section>
-
-    <section id="services" class="bg-light">
+    <hr>
+    <section id="services" >
 
         <h1><b> 1) Night before.</b></h1>
-        <h1> <i> Data from 12 AM to 3 AM UTC  (8 PM to 11 PM EST)</i></h1><br>
-        <h1> 📊 Tweet Breakdown </h1>
+        <h2>Data from 12 AM to 3 AM UTC  (8 PM to 11 PM EST)</h2><br>
+        <h1> 📊 Tweet Breakdown</h1>
+        <h2>(Figure 1.)</h2>
         <div class='tableauPlaceholder' id='viz1524623149465' style='position: relative'>
           <noscript>
             <a href='#'><img alt='Tweet Type ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4TweetBreakdown&#47;TweetType&#47;1_rss.png' style='border: none' /></a>
@@ -115,6 +123,7 @@
         </script>
 
         <br><h1>📈 Mentions vs. Time </h1>
+        <h2>(Figure 2.)</h2>
         <div class='tableauPlaceholder' id='viz1524623788450' style='position: relative'>
           <noscript>
             <a href='#'><img alt='Most Mentioned vs. Time ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4MentionsVTime&#47;MostMentionedvs_Time&#47;1_rss.png' style='border: none' /></a>
@@ -145,8 +154,9 @@
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
 
-        <br><h1>🗣️ Most Mentioned Users </h1>
-        <h3><i>*mention = @mention OR Retweet</i></h3><br>
+        <hr><h1>🗣️ Most Mentioned Users </h1>
+        <h3><i>*mention = @mention OR Retweet</i></h3>
+        <h2>(Figure 3.)</h2>
         <div class='tableauPlaceholder' id='viz1524623968606' style='position: relative'>
           <noscript>
             <a href='#'><img alt='Most Mentioned Bar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;0-&#47;0-4Mentions&#47;MostMentionedBar&#47;1_rss.png' style='border: none' /></a>
@@ -179,8 +189,9 @@
 
         <br><hr>
         <h1><b> 2) Morning.</b></h1>
-        <h1> <i>Data from 1 PM to 2 PM UTC  (9 AM to 10 AM EST)</i></h1><br>
+        <h2>Data from 1 PM to 2 PM UTC  (9 AM to 10 AM EST)</h2><br>
         <h1> 📊 Tweet Breakdown </h1>
+        <h2>(Figure 4.)</h2>
         <div class='tableauPlaceholder' id='viz1524624293684' style='position: relative'>
           <noscript>
             <a href='#'><img alt='Tweet Breakdown ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMTweetBreakdown_0&#47;TweetBreakdown&#47;1_rss.png' style='border: none' />
@@ -213,6 +224,7 @@
         </script>
 
         <br><h1>📈 Mentions vs. Time </h1>
+        <h2>(Figure 5.)</h2>
         <div class='tableauPlaceholder' id='viz1524624364072' style='position: relative'>
           <noscript>
             <a href='#'><img alt='Most Mentioned vs. Time ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMMentionsVTime&#47;MostMentionedvs_Time&#47;1_rss.png' style='border: none' />
@@ -243,7 +255,8 @@
           </script>
 
           <br><h1>🗣️ Most Mentioned Users </h1>
-          <h3><i>*mention = @mention OR Retweet</i></h3><br>
+          <h3><i>*mention = @mention OR Retweet</i></h3>
+          <h2>(Figure 6.)</h2>
           <div class='tableauPlaceholder' id='viz1524624426312' style='position: relative'>
             <noscript>
               <a href='#'><img alt='Most Mentioned Bar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;start1-2PMMentions&#47;MostMentionedBar&#47;1_rss.png' style='border: none' />
@@ -275,8 +288,9 @@
 
           <br><hr>
           <h1><b> 3) Afternoon.</b></h1>
-          <h1> <i>Data from 6 PM to 6:30 PM UTC  (2 PM to 2:30 PM EST)</i></h1><br>
+          <h2> Data from 6 PM to 6:30 PM UTC  (2 PM to 2:30 PM EST)</h2><br>
           <h1> 📊 Tweet Breakdown </h1>
+          <h2>(Figure 7.)</h2>
           <div class='tableauPlaceholder' id='viz1524624549212' style='position: relative'>
             <noscript>
               <a href='#'><img alt='Tweet Type ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30TweetBreakdown&#47;TweetType&#47;1_rss.png' style='border: none' /></a>
@@ -307,6 +321,7 @@
           </script>
 
           <br><h1>📈 Mentions vs. Time </h1>
+          <h2>(Figure 8.)</h2>
           <div class='tableauPlaceholder' id='viz1524624624716' style='position: relative'>
             <noscript>
               <a href='#'><img alt='Most Mentioned vs. Time ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30MentionsVTime&#47;MostMentionedvs_Time&#47;1_rss.png' style='border: none' /></a>
@@ -338,7 +353,8 @@
           </script>
 
           <br><h1>🗣️ Most Mentioned Users </h1>
-          <h3><i>*mention = @mention OR Retweet</i></h3><br>
+          <h3><i>*mention = @mention OR Retweet</i></h3>
+          <h2>(Figure 9.)</h2>
           <div class='tableauPlaceholder' id='viz1524624703910' style='position: relative'>
             <noscript>
               <a href='#'><img alt='Sheet 6 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6-&#47;6-6-30Mentions&#47;Sheet6&#47;1_rss.png' style='border: none' /></a>
@@ -369,50 +385,124 @@
               vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
 
-          <div class="row">
+          <div class="row" id="contact">
             <div><br>
+              <h1> Data Analysis
+              <p>Figure 1, 4, and 7, which correspond to the Tweet Breakdown graphs, suggest that Retweets dominate the #MarchForOurLives conversation on Twitter. I hypothesized that a few key users were responsible for authoring content that was then Retweeted tens of thousands of times by other Twitter users within many different social networks. </p>
+              <p>This hypothesis was then supported by my findings in Figures 2, 5, and 8. These graphs represent the total mentions (@mentions and Retweets) of the top 10 users in each respective time interval. Interestingly, the trend in the Mentions vs. Time graphs correspond to the trends in the Tweet breakdown graphs. </p>
+              <p>For example, compare Figure 4 and Figure 5. At 1:56 PM, a spike occurs in both the number of Retweets and the number of mentions for all top 10 users. This similar activity spike is present in all the other graphs. This suggests that the top 10 users in each dataset have a tangible influence over the conversation that is occurring on Twitter at any given time. As such, I felt the primary research question was justified. The top users were directly influencing trends Retweets, which were by far the most common type of Tweet. </p>
+              <p>Given this, I felt it was necessary to investigate who the top users were among all of the datasets. Then, in order to understand the conversation, I needed to analyze the most popular Tweets from the top users. Below is the analysis of the top Tweets from the top users.</p>
+
               <hr>
-              <h1>😎 Most mentioned users</h1>
-              <p><i> *Not all of the data is visually represented on this page. All Tableau files are available, however.</i></p>
+              <h1>😎 Research Question: Which Twitter users drew the most attention during the #MarchForOurLives D.C. protest on March 24, 2018?</h1>
+              <br>
               <ul>
-                <li> funder: 17995 mentions</li>
-                <li>emma4change: 13495 mentions</li>
-                <li>amarch4ourlives: 7517 mentions</li>
-                <li>tedlieu: 3109 mentions</li>
-                <li>therickydavila: 2577 mentions</li>
-                <li>krassenstein: 2400 mentions</li>
-                <li>sallyqyates: 2071 mentions</li>
+                <h3>Top Users by Mentions</h3>
+                <li><a target="_blank" href="https://twitter.com/funder">@funder:</a> 17995 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/emma4change">@emma4change:</a> 13495 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/amarch4ourlives">@amarch4ourlives:</a> 7517 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/tedlieu">@tedlieu:</a> 3109 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/therickydavila">@therickydavila:</a> 2577 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/krassenstein">@krassenstein:</a> 2400 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/sallyqyates">@sallyqyates:</a> 2071 mentions</li>
+                <br>
+              </ul>
+              <ul>
+                <h3>Other Celebrities</h3>
+                <li><a target="_blank" href="https://twitter.com/hasley">@hasley:</a> 842 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/therock">@therock:</a> 789 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/arianaworldupd2">@arianaworldupd2:</a> 769 mentions</li>
+                <li><a target="_blank" href="https://twitter.com/theellenshow">@theellenshow:</a> 734 mentions</li>
               </ul>
             </div>
           </div>
           <div class="row">
             <div><br>
               <hr>
-              <h1>📋 What did they say?</h1>
-              <p><i>Below includes the most popular Tweet from each of the most popular users during the protest. <br>Note: additional Retweets and likes have accumulated since the event.</i></p>
-              <ul>
-                <li>funder:<br> <img src="data/funder.jpg"></li><br>
-                <li>emma4change:<br> <img src="data/emma.jpg"></li><br>
-                <li>amarch4ourlives:<br> <img src="data/sally.jpg"></li><br>
-                <li>tedlieu:<br> <img src="data/tedl.jpg"></li><br>
-                <li>therickydavila:<br> <img src="data/ricky.jpg"></li><br>
-                <li>krassenstein:<br> <img src="data/krass.jpg"></li><br>
-                <li>sallyqyates:<br> <img src="data/march.jpg"></li>
-              </ul>
+              <h1>📋 Top User Analysis</h1>
+              <h2>Who are these users, what are they saying, for what purpose, and to what effect?</h2><br>
+                <h2>@funder:<br> <img src="data/funder.jpg"></h2>
+                <p><b>Who is @funder?</b> Scott Dworkin worked on both the 2008 and the 2012 Obama campaigns and was a senior advisor of the Draft Biden and the Run Warren Run campaigns. He is the co-founder of the Democratic Coalition, which is a Democrat advocacy group. From this information, made available on his Twitter, @funder, Dworkin is an influential Democrat activist who has significant experience within political campaigns. He has a large Twitter following and generates a tremendous amount of content on Twitter (167k Tweets to date).</p>
+                <p><b>What did @funder Tweet?</b> Dworkin’s most popular Tweet took place the afternoon before the protest. The Tweet indicates that users should Retweet the Tweet, which explains why he Tweet was so popular. In the Tweet, Dworkin explains that “trolls” are attempting to disrupt the #MarchForOurLives hashtag by using #March4OurLives. In effect, this would diminish the popularity of the protest’s main hashtag. He intentionally excludes the hashtag character before March4OurLives. He uses #MarchForOurLives, which is why the Tweet showed up in my data.</p>
+                <p><b>What was the purpose of the Tweet?</b> The purpose was to spread awareness about malicious hashtags during the protest. In addition, the Tweet serves as a reminded to use #MarchForOurLives frequently to increace the popularity and visibility of the hashtag.<p>
+                <p><b>What what was the impact of the Tweet?</b> Although there is no way of knowing, given the popularity of the Tweet, many Twitter users that attended the event, or even observed the event from other states, were aware that the specificity of the hashtag matters and used #MarchForOurLives rather than a variant.</p>
+
+                <br><hr><br>
+
+                <h2>@emma4change:<br> <img src="data/emma.jpg"></h2>
+                <p><b>Who is @emma4change?</b> Emma Gonzalez is one of the leaders of the #NeverAgain movement. She is a survivor of the Parkland shooting and is known on social media for her impassioned speeches about gun violence and the necessity for gun reform.<p>
+                <p><b>What did @emma4change Tweet?</b> Many of Emma’s viral content depicts her as incredibly impassioned, but this Tweet provides a glimpse into her softer side. Emma is sharing a popular video in which veterans express their support for #NeverAgain. She is soft-spoken and gracious in her Tweet. The Tweet is authored the morning before the protest. She uses #MarchForOurLives as the primary hashtag in the Tweet, and also includes #VeteransForGunReform and shares the URL to the video (<a target="_blank" href="https://wepresent.wetransfer.com/story/veterans-for-gun-reform/"> found here</a>), which is part of an interactive multimedia presentation on gun reform.</p>
+                <p><b>What was the purpose of the Tweet?</b> First, this Tweet expresses support for #VeteransForGunReform, which represented a well-respected audience who have first hand experience with gun violence. This is a powerful political gesture. Second, the fact that the Tweet was authored the morning before the protest suggests that the Tweet is intended to mobilize. Emma suggest that she and the veterans will be present at the protest in D.C. as they #MarchForOurLives. #MarchForOurLives is used to generate social media attention for the protest, but is also symbolic of people who have faced gun violence and protest for fear of their lives.</p>
+                <p><b>What what was the impact of the Tweet?</b> The Tweet as of now has acculumated over 200,000 likes and 87,000 Retweets. Given that the Tweet links to a #VeteransForGunReform multimedia presentation, but impact of the Tweet was that it provided tremendous advertising for the presentation itself. In addition, it also raised awareness among the general public that there are many veterans who believe in gun reform. Lastly, the Tweet served to help mobilize #MarchForOurLives D.C. given that it was authored the day before the protest.</p>
+
+                <br><hr><br>
+
+                <h2>@amarch4ourlives:<h3> <img src="data/sally.jpg"></h2><br>
+                <p><b>Who is @AMarch4OurLives?</b> This is the official Twitter of the protest, which is run by people within the #MarchForOurLives campaign. This campaign provides support for #MarchForOurLives protests all around the world, not just in D.C., and the Twitter account is still actively managed.</p>
+                <p><b>What did @AMarch4OurLives Tweet?</b> The Tweet was authored the morning of the protest at 9:01 AM EST, when the event started. The Tweet encourages users to watch the livestream of the event on <a target="_blank" href="https://www.pscp.tv/">pscp.tv </a> which allows users to livestream from their smartphones or other recording devices. Live streams with the most views appear at the top of the page when searching for a specific location. The Tweet includes #MarchForOurLives, used as a verb (ex. As we #MarchForOurLives) which is symbolic of the fact that the leaders of the movement are themselves survivors of gun violence.</p>
+                <p><b>What was the purpose of the Tweet?</b> The purpose of this Tweet was to generate attention for the protest. Live streaming technology allows people from around the world an authentic glimpse into the protest (ex. Smart phones on the ground as apposed to a TV shot from a helicopter). This live streaming platform is geared towards sharing on social media, with features that allow users to share the stream directly with their followers on multiple platforms. In effect, @AMarch4OurLives sharing this stream promotes a large network of other users sharing the stream with their respective networks, reaching a large audience instantaneously.</p>
+                <p><b>What what was the impact of the Tweet?</b> This Tweet generates awareness for the live streaming capabilities of the protest. For users who are unable to attend in person, they can still be involved with the protest by watching the live stream and sharing protest-related content on social media platforms.</p>
+
+
+
+                <br><hr><br>
+                <h2>@tedlieu:<br> <img src="data/tedl.jpg"></h2><br>
+                <p><b>Who is @tedlieu?</b> Ted Lieu is a Democrat Congressman from California who served in the United States Air Force. On Twitter, he mentions “Also, I don't take orders from Vladimir Putin.”</p>
+                <p><b>What did @tedlieu Tweet?</b> Congressman Lieu shared a Tweet from @TheHill, the Twitter account of the newspaper The Hill, that indicates a Florida GOP canidates’ rating dropped after siding with the NRA. Congressman Lieu suggests the reputation of the NRA is seriously declining and that #MarchForOurLives activists have tangible power over public sentiment. The Tweet was authored the afternoon before the event and Congressman Lieu encourages people to attend the protest. He finishes the Tweet by including the #MarchForOurLives. Interestingly, the 4 blue figure emoji that appears next to the hashtag is a custom Twitter emoji that is associated with the hashtag itself.</p>
+                <p><b>What was the purpose of the Tweet?</b> The primary purpose of the Tweet was mobilization. Congressman Lieu explicitly says that he encourages people to attend the protest and exhibit their power to influence public sentiment towards gun laws. The secondary purpose was education. The Tweet shared with a link to an article about a candidate whose affiliation with the NRA was harmful to his campaign.</p>
+                <p><b>What what was the impact of the Tweet?</b> This Tweet generated awareness for #MarchForOurLives and provided educational insight into the potentially declining NRA’s political power.</p>
+
+
+
+
+
+
+
+                <br><hr><br>
+                <h2>@therickydavila:<br> <img src="data/ricky.jpg"></h2><br>
+                <p><b>Who is @therickydavila?</b> Ricky Davila is a singer-songwriter and political activist with affiliations to the Democratic party. Davila’s Spotify account is not widely popular, which leads me to believe that he uses music for activism rather than a profession. With 21.6k Tweets, his Twitter is highly active and generates a large amount of attention for Liberal activist causes.</p>
+                <p><b>What did @therickydavila Tweet?</b> Davila Retweeted Emma Gonzalez’s most popular Tweet that included #VeteransForGunReform’s powerful multimedia presentation. Given the widespread popularity of Gonzales’s Tweet, this viral Retweet provides insight into the scope of Gonzales’s original Tweet. Gonzales’s original Tweet, as of April 29, 2018, has been Retweeted over 87,000 times. If even a few of these Retweets went viral, the potential audience for the Tweet grows exponentially, tapping into many different social networks throughout Twitter.</p>
+                <p><b>What was the purpose of the Tweet?</b> Davila wanted to share with his followers the #VeteransForGunReform’s content. His Tweet is concise because the focus on the Tweet is watching the video. The purpose of the Tweet is to spread Gonzales’s original Tweet to a larger audience.</p>
+                <p><b>What what was the impact of the Tweet?</b> Users within Davila’s network that are not necessarily within Gonzales’s network are able to see her content. In this Tweet, Davila amplifies Gonzales’s message while providing his personal reaction, which his followers are interested in as well.</p>
+
+
+                <br><hr><br>
+                <h2>@krassenstein:<br> <img src="data/krass.jpg"></h2><br>
+                <p><b>Who is @krassenstein?</b> Brian Krassenstein is a Liberal activist who is best known for his <a target="_blank" href="https://www.pscp.tv/krassenstein/1YqKDdDzrVQKV"> talk show on Periscope</a>, the same streaming platform that @AMarch4OurLives Tweeted about during the early hours of the protest. Krassenstein has a large follower base (419K), but also follows nearly the same amount of people.</p>
+                <p><b>What did @krassenstein Tweet?</b> Krassenstein Retweeted a Tweet from @BarackObama, in which the former President shared his admiration for the young protestors involved in #MarchForOurLives. Krassenstein used Obama’s Tweet as a quote and juxtaposed it with a powerful picture of the event.</p>
+                <p><b>What was the purpose of the Tweet?</b> The caption of the Tweet is “This says it all #MarchForOurLives” and the function of the Tweet is simply to combine Obama’s Tweet with an image. While Obama’s Tweet was already widely popular at the time of the event, he did not include any hashtags or media. Krassenstein therefore appended the protest hashtag, as well as a powerful image, to Obama’s Tweet. This amplifies the power of Obama’s original Tweet for Krassenstein’s large audience.</p>
+                <p><b>What what was the impact of the Tweet?</b> The Tweet was authored at 10 AM on the morning of the event. Given this timeframe, it was used to motivate protestors who may be attending or watching the event.</p>
+                <br><hr><br>
+                <h2>@sallyqyates:<br> <img src="data/march.jpg"></h2>
+                <p><b>Who is @sallyqyates?</b> Sally Yates was the former Deputy Attorney General under Barack Obama. She was dismissed by President Trump. Yates is a Democrat who is political on Twitter but not active. She only has 24 Tweets, but a large audience of followers (583k).</p>
+                <p><b>What did @sallyqyates Tweet?</b> Yates quoted Margaret Mead, a key figure in the feminist movements of the 1960s and 70s. Mead’s quote stresses that a small, thoughtful grou can have a large impact. She juxtaposes this quote with the Parkland students, who are “leading the way” towards gun control. Yates also includes #MarchForOurLives.</p>
+                <p><b>What was the purpose of the Tweet?</b> This was a show of support. Yates is a figure of political influence and her endorsement carries weight in the world of politics. </p>
+                <p><b>What was the impact of this Tweet?</b> This Tweet was authored at 5:43 AM on March 24, 2018. As such, this show of support is critically timed with the protest. The use of #MarchForOurLives, coupled with Yates’ large Twitter following, helped to spread awareness of the event on the day of. Moreover, Yates being a respected political figure added credibility to the protest.</p>
+                <br><hr><br>
+                <h1>Analysis of Top Users and Their Top Tweets</h1>
+                <p><b>Who are they?</b> As seen above, the top Twitter users (based on number of @mentions and Retweets containing #MarchForOurLives) during the #MarchForOurLives D.C. protest were a mix of student-leaders, influential Liberal activists, and politicians.</p>
+                <p><b>What did they Tweet?</b> While the nature of each Tweet differed, the common thread between each Tweets was #MarchForOurLives. Each top user supported the protest and used Twitter as a platform to advertise and show support for the protest.</p>
+                <p><b>What was the purpose of their Tweets?</b> In all cases, it is fair to say that the purpose of the Tweets was mobilization. All of the top Tweets were authored the day before, or the morning of the event. The authors of these Tweets, all of whom have large Twitter followings, were aware that their content would reach hundreds of thousands, if not millions, of other Twitter users. Therefore, their Tweets served to raise immediately awareness of the protest and encourage people to either attend themselves, or show support by watching live streams of the event, engaging with media related to gun reform, or using the #MarchForOurLives hashtag to increace the protests visibility.</p>
+                <p><b>What was the impact of their Tweets?</b> #MarchForOurLives D.C. was an enormously successful event. The event remained peaceful, was brilliantly organized, and culminated with impassioned speeches from student activists from around the country: Parkland, Chicago, L.A., and others. <a href="http://thehill.com/blogs/blog-briefing-room/news/380116-organizers-estimate-800k-people-in-dc-for-march-so-far">The Hill estimates</a> that as many as 800,000 people attended the protest, making it the largest protest ever held in Washington D.C. This kind of attention would not have been possible without popular users on social media constantly generating viral content that is exposed to millions of people.</p>
+
+            </div>
+            <div>
+              <div>
+                <div>
+                  <h2>Future Implications</h2>
+                  <p>Based on this research, I believe the largest implication is the power that user data provides. This project has demonstrated to me that social media plays a central role in contemporary protests. Key users with large followings were able to have a tangible influence on the gun-rights conversation on Twitter. Perhaps more powerful, however, is the ability to visualize user data. My dataset of roughly 1 millions Tweets is but a drop in the ocean compared to the datasets purchased by large analytics companies from Twitter, Facebook, Snapchat, and other data-selling companies. As the Facebook-Cambridge Analytica scandal, has shown, user data has the power to influence elections, predict social trends, and even allow powerful organizations to create new trends in society by disseminating “fake news.”</p>
+                  <p>While I believe social media plays a central mobilizing role in activism, I also believe that average users must take it upon themselves to question the type and amount of data they are giving to social media platforms. By interacting with the graphs above, you will note that every Tweet contains roughly 20 data fields, corresponding to username, geolocation, creation date, number of followers, Tweet content, etc. All of this information, if manipulated correctly, can provide cutting-edge insight for political campaigns and large corporations.</p>
+
+                  <h2>Sources Cited</h2>
+                  <p> Given the nature of this research, I did not use outside sources. The dataset was obtained with the help of Brian Norberg and is completel original. The dataset harvested a few days after the #MarchForOurLives D.C. event on March 24, 2018. I created visualizations using Tableau, a data visualization software, and interpreted all corresponding data based on what I know about #MarchForOurLives in the context of the current gun debate.</p>
+              </div>
             </div>
           </div>
+
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <h2>Analysis</h2>
-            <p class="lead">For each of the top users, I am going to analyse their top Tweets from the protest. I hope to look at the language, timing, and potential effect of at their most popular Tweet created during the protest. I will use this information to explain the role of these popular users in mobalizing the protest and further to highlight the power that social media plays in popular protest.</p>
-            <p class="lead">Basically, the visualizations help support the idea that information during this protest was spread by influenchial users. Their Tweets were immensly popular and spread virally. Therefore, it is important to consider the following: who the user is, what they said, for what purpose, and possibly, to what effect?</p>
-          </div>
-        </div>
-      </div>
+    <section>
+
     </section>
 
     <!-- Footer -->
