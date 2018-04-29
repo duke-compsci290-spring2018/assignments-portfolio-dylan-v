@@ -8,6 +8,8 @@
 ## Build Setup
 
 ``` bash
+#First clone this repository to your local machine. Then cd into the clone's directory and do the following:
+
 # install dependencies
 npm install
 
@@ -23,7 +25,7 @@ npm run build --report
 
 #About the project: 
 
-•Interactively enter data or load data from an online source that is organized within a database
+•Interactively enter data or load data from an online source that is organized within a database <br>
 	o User may vote on the bias of a news source, share whether they agree with the current bias rating, and if appropriate, upload a newspaper.
 	o Data on firebase: newspapers (contains all information related to the newspaper, updated in real time), user information (vote and approval history, updated in real time)
 •Interact with the cumulative data in a useful way
