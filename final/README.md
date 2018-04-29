@@ -23,23 +23,27 @@ npm run build
 npm run build --report
 ```
 
-#About the project: 
+--- About the project: 
 
-•Interactively enter data or load data from an online source that is organized within a database <br>
-	o User may vote on the bias of a news source, share whether they agree with the current bias rating, and if appropriate, upload a newspaper.
-	o Data on firebase: newspapers (contains all information related to the newspaper, updated in real time), user information (vote and approval history, updated in real time)
-•Interact with the cumulative data in a useful way
-	o Data on each newspaper is visualized using Chart.js, which allows data fields to be manipulated to alter the visualization.
-•	View the cumulative or individual data in multiple ways
-	o User voting and approval statistics are constantly collected and computed into meaningful statistics (ex. Average approval rating, voting history, personal bias). One key function of user data is respecting the ability to create new newspapers for users that express significant personal bias (ex. Voting on Liberal-leaning papers as Conservative).
-• Keep track of individual preferences regarding users of your web site
-	oUser voting habits are stored on Firebase and retrieved on login. As mentioned above, these voting habits make for meaningful statistics.
+--- Interactively enter data or load data from an online source that is organized within a database <br>
+•User may vote on the bias of a news source, share whether they agree with the current bias rating, and if appropriate, upload a newspaper.
+•Data on firebase: newspapers (contains all information related to the newspaper, updated in real time), user information (vote and approval history, updated in real time)
+--- Interact with the cumulative data in a useful way
+•Data on each newspaper is visualized using Chart.js, which allows data fields to be manipulated to alter the visualization.
+• View the cumulative or individual data in multiple ways
+•User voting and approval statistics are constantly collected and computed into meaningful statistics (ex. Average approval rating, voting history, personal bias). One key function of user data is respecting the ability to create new newspapers for users that express significant personal bias (ex. Voting on Liberal-leaning papers as Conservative).
+--- Keep track of individual preferences regarding users of your web site
+• User voting habits are stored on Firebase and retrieved on login. As mentioned above, these voting habits make for meaningful statistics.
 
-#Roles
+--- Roles
 
 Check the application "About" tab for information on different types of users and their abilities.
 
-#User Feedback
+--- User Feedback
 
 Christian Leonard: "The website feels pretty easy to navigate. I really liked the visualizations, but wasn't sure why you seperated the bias votes and the approval ratings... might look better if they were side to side. The Emojis are great though. Makes the site seem modern and social-media oriented somehow. The site also feels really fast. The interface is really reactive and helps with the user's interactions."
+
+Nathan Vanelli: "The app felt really easy to use. The concept is great and pretty relevant to what's going on with "fake news" and all. The visualization page was my favorite part, just because it's easier to make sense of large groups of numbers with graphs. Also, the user stats page is interesting -- it shows the power of analytics. I would like to know more about the exact math behind the bias calculations, but the explanations were pretty clear."
+
+Logan Tappe: "Pretty awesome! In terms of User Experience, the app flows pretty well. However, I would make the home page the about page and then provide an easy way to navigate to the page where you vote. Other than that the layout seemed pretty logical and the overall concept is really cool! I like how you took data presented on one page and graohed it on another. it might have been smart to format them all on the same page. For exmaple, maybe next to each newspaper bias/approval ratings you put the graphs. That might be too cluttered though. Overall, really cool app!"
 
