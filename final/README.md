@@ -23,23 +23,23 @@ npm run build
 npm run build --report
 ```
 
-##About the project: 
+## About the project: 
 
-###Interactively enter data or load data from an online source that is organized within a database
+### Interactively enter data or load data from an online source that is organized within a database
 •User may vote on the bias of a news source, share whether they agree with the current bias rating, and if appropriate, upload a newspaper.<br>
 •Data on firebase: newspapers (contains all information related to the newspaper, updated in real time), user information (vote and approval history, updated in real time).<br>
-###Interact with the cumulative data in a useful way
+### Interact with the cumulative data in a useful way
 •Data on each newspaper is visualized using Chart.js, which allows data fields to be manipulated to alter the visualization.<br>
-###View the cumulative or individual data in multiple ways
+### View the cumulative or individual data in multiple ways
 •User voting and approval statistics are constantly collected and computed into meaningful statistics (ex. Average approval rating, voting history, personal bias). One key function of user data is generating a user bias rating, which determined a user's ability to create new newspapers. If a user is proven to be excessively bias (ex. voting Conservative on multiple publications that are clearly Liberal), they will lose their ability to add content.<br>
-###Keep track of individual preferences regarding users of your web site<br>
+### Keep track of individual preferences regarding users of your web site<br>
 • User voting habits are stored on Firebase and retrieved on login. As mentioned above, these voting habits make for meaningful statistics. Voting and approval statistics are stored as arrays on Firebase.<br>
 
-###Roles
+### Roles
 
 Check the application "About" tab for information on different types of users and their abilities.
 
-###User Feedback
+### User Feedback
 
 Christian Leonard: "The website feels pretty easy to navigate. I really liked the visualizations, but wasn't sure why you seperated the bias votes and the approval ratings... might look better if they were side to side. The Emojis are great though. Makes the site seem modern and social-media oriented somehow. The site also feels really fast. The interface is really reactive and helps with the user's interactions."
 
