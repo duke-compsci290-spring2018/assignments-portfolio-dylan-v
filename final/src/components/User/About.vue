@@ -11,12 +11,12 @@
       <ul>
         <li class="bold">👶 Guest Features </li>
         <li>👍 View newspaper ratings (bias and approval).</li>
-        <li>📊 View newspaper data visualiations.</li>
         <li>👥 Create an account.</li><br>
         <li class="bold">😎 User Features </li>
         <li>📋 Login to an existing account with saved voting/approval preferences.</li>
         <li>📄 Auto-login between sessions.
         <li>🗳️ Vote on political bias and approval rating.</li>
+        <li>📊 View newspaper data visualiations.</li>
         <li>➕ Add newspapers to be voted on.</li><br>
         <li class="bold">🤠 Administrative Features </li>
         <li>✏️ Edit the name and URL of newspapers.</li>

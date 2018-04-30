@@ -2,8 +2,10 @@
 
 > A Vue.js project
 > This project was created by Dylan Vanelli and Sean Snider for CS290.
-> As of now (Saturday March 28), we have not figured out how to deploy the application due to complications with Vue and Node.hs.
-> However, the instructions below provide a sure-fire way to run the application locally on your machine. Since the data within the application uses Firebase, all interactions made by the user are recorded and update the application in real time for all users.
+> The instructions below provide a sure-fire way to run the application locally on your machine. The data within the application saves to Firebase, so all interactions made by the user are recorded and update the application in real time for all users.
+> This application is important and relevant in light of so-called "fake news." The integrity of publications now more than ever must be critically evaluated by the public in order to ensure information is accurate. In that light, we are entrusting the public with determining the media biases of various newspapers.
+> In order to ensure this data is accurate, we have provided tools in our application for users to express their approval of current scores. If approval ratings are noticeably low for a given source, then administrators can take note of the source and determine whether or not to manually remove it.
+> For reference, in order to access the administrative account to test features, the administrative account we have set up for testing purposes is as followed: username: admin@skew.com, password: admin123.
 
 ## Build Setup
 
@@ -23,7 +25,7 @@ npm run build
 npm run build --report
 ```
 
-## About the project: 
+## About the project:
 
 ### Interactively enter data or load data from an online source that is organized within a database
 • User may vote on the bias of a news source, share whether they agree with the current bias rating, and if appropriate, upload a newspaper.<br>
@@ -37,14 +39,11 @@ npm run build --report
 <br>
 
 ### Roles
-
 Check the application "About" tab for information on different types of users and their abilities.
 
 ### User Feedback
+Christian Leonard: "The website feels pretty easy to navigate. I really liked the visualizations, but wasn't sure why you separated the bias votes and the approval ratings... might look better if they were side to side. The Emojis are great though. Makes the site seem modern and social-media oriented somehow. The site also feels really fast. The interface is really reactive and helps with the user's interactions."
 
-Christian Leonard: "The website feels pretty easy to navigate. I really liked the visualizations, but wasn't sure why you seperated the bias votes and the approval ratings... might look better if they were side to side. The Emojis are great though. Makes the site seem modern and social-media oriented somehow. The site also feels really fast. The interface is really reactive and helps with the user's interactions."
+Nathan Vanelli: "Cool app, better concept. The concept is great and pretty relevant to what's going on with "fake news" and the power of user data, revealed by the Cambridge Analytica scandal. The visualization page was my favorite part, just because it's easier to make sense of large groups of numbers with graphs. Also, the user stats page is interesting -- it shows how submitting a small amount of information can reveal larger trends about a user. I would like to know more about the exact math behind the bias calculations, but the explanations/methodology was pretty clear."
 
-Nathan Vanelli: "Cool app, better concept. The concept is great and pretty relevant to what's going on with "fake news" and the power of user data, revealed by the Cambridge Analytica scandle. The visualization page was my favorite part, just because it's easier to make sense of large groups of numbers with graphs. Also, the user stats page is interesting -- it shows how submitting a small amount of information can reveal larger trends about a user. I would like to know more about the exact math behind the bias calculations, but the explanations/methogology was pretty clear."
-
-Logan Tappe: "Pretty awesome! In terms of User Experience, the app flows pretty well. However, I would make the home page the about page and then provide an easy way to navigate to the page where you vote. Other than that the layout seemed pretty logical and the overall concept is really cool! I like how you took data presented on one page and graohed it on another. it might have been smart to format them all on the same page. For exmaple, maybe next to each newspaper bias/approval ratings you put the graphs. That might be too cluttered though. Overall, really cool app!"
-
+Logan Tappe: "Pretty awesome! In terms of User Experience, the app flows pretty well. However, I would make the home page the about page and then provide an easy way to navigate to the page where you vote. Other than that the layout seemed pretty logical and the overall concept is really cool! I like how you took data presented on one page and graphed it on another. it might have been smart to format them all on the same page. For example, maybe next to each newspaper bias/approval ratings you put the graphs. That might be too cluttered though. Overall, really cool app!"

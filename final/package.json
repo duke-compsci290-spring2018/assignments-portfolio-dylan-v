@@ -13,6 +13,7 @@
   "dependencies": {
     "chart.js": "^2.7.2",
     "firebase": "^4.13.1",
+    "gh-pages": "^1.1.0",
     "hchs-vue-charts": "^1.2.8",
     "vue": "^2.5.2",
     "vue-append": "^1.1.2",
