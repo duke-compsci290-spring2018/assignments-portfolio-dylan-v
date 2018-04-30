@@ -1,0 +1,110 @@
+{
+  "newspapers" : {
+    "-LBCiGr4aJlBDRuZgB2m" : {
+      "biasTowards" : "Liberal",
+      "creatorID" : "iMZJzquNYZWVwKewKRknakIQU8J2",
+      "id" : "-LBCiGr4aJlBDRuZgB2m",
+      "index" : 0,
+      "name" : "New York Times",
+      "thumbsDown" : 102,
+      "thumbsUp" : 302,
+      "topVote" : 513,
+      "url" : "nytimes.com",
+      "votesCentrist" : 200,
+      "votesLib" : 513,
+      "votesModLib" : 322,
+      "votesModRep" : 103,
+      "votesRep" : 32
+    },
+    "-LBCiTcO6CfjAvrPBQvL" : {
+      "biasTowards" : "Moderate Liberal",
+      "creatorID" : "iMZJzquNYZWVwKewKRknakIQU8J2",
+      "id" : "-LBCiTcO6CfjAvrPBQvL",
+      "index" : 1,
+      "name" : "CNN",
+      "thumbsDown" : 69,
+      "thumbsUp" : 102,
+      "topVote" : 495,
+      "url" : "www.cnn.com",
+      "votesCentrist" : 205,
+      "votesLib" : 381,
+      "votesModLib" : 495,
+      "votesModRep" : 130,
+      "votesRep" : 97
+    },
+    "-LBCjL0cdI-fXHeQevAm" : {
+      "biasTowards" : "Centrist",
+      "creatorID" : "iMZJzquNYZWVwKewKRknakIQU8J2",
+      "id" : "-LBCjL0cdI-fXHeQevAm",
+      "index" : 2,
+      "name" : "Al Jazeera",
+      "thumbsDown" : 302,
+      "thumbsUp" : 442,
+      "topVote" : 391,
+      "url" : "aj",
+      "votesCentrist" : 391,
+      "votesLib" : 251,
+      "votesModLib" : 238,
+      "votesModRep" : 102,
+      "votesRep" : 22
+    },
+    "-LBEIl536at7r8Hn5dwy" : {
+      "biasTowards" : "Moderate Conservative",
+      "creatorID" : "iMZJzquNYZWVwKewKRknakIQU8J2",
+      "id" : "-LBEIl536at7r8Hn5dwy",
+      "index" : 3,
+      "name" : "Wall Street Journal",
+      "thumbsDown" : 226,
+      "thumbsUp" : 303,
+      "topVote" : 412,
+      "url" : "https://www.wsj.com/",
+      "votesCentrist" : 389,
+      "votesLib" : 98,
+      "votesModLib" : 189,
+      "votesModRep" : 412,
+      "votesRep" : 202
+    },
+    "-LBEIvrkmSKhe43wGRsQ" : {
+      "biasTowards" : "Conservative",
+      "creatorID" : "iMZJzquNYZWVwKewKRknakIQU8J2",
+      "id" : "-LBEIvrkmSKhe43wGRsQ",
+      "index" : 4,
+      "name" : "Breitbart News",
+      "thumbsDown" : 406,
+      "thumbsUp" : 230,
+      "topVote" : 502,
+      "url" : "http://www.breitbart.com/",
+      "votesCentrist" : 89,
+      "votesLib" : 29,
+      "votesModLib" : 102,
+      "votesModRep" : 399,
+      "votesRep" : 502
+    }
+  },
+  "users" : {
+    "Lh1JKSl7asZrsNkHzDPXkY48o6o2" : {
+      "thumbs" : [ "down", "up", "down", "up", "down" ],
+      "votes" : [ "lib", "Centrist", "Centrist", "modRep", "rep" ]
+    },
+    "XiXrBxdD75PErvwQfgaTorWZeZE2" : {
+      "thumbs" : [ "down", "up", "up" ],
+      "votes" : [ "lib", "rep", "lib" ]
+    },
+    "eJdMCfW0tyQdzkGE9moxgoJEBKN2" : {
+      "thumbs" : [ "up", "", "" ],
+      "votes" : [ "modLib", "", "" ]
+    },
+    "iMZJzquNYZWVwKewKRknakIQU8J2" : {
+      "thumbs" : [ "up", "down", "up" ],
+      "votes" : [ "lib", "modLib", "lib" ]
+    },
+    "tBGmZba4lGertrXZI28GQ8kVAcK2" : {
+      "thumbs" : [ "up", "", "", "", "" ],
+      "votes" : [ "lib", "Centrist", "", "", "" ]
+    },
+    "yBuwqOtkqjXyrZSvo2ruRRxdrhI2" : {
+      "thumbs" : [ "up", "down", "up", "down", "up" ],
+      "votes" : [ "lib", "modLib", "Centrist", "rep", "modRep" ]
+    }
+  }
+}
